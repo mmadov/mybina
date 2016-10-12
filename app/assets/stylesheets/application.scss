@@ -1,0 +1,50 @@
+/*
+ *= require_tree .
+ 
+ *= require dropzone/dropzone
+
+ *= require_self
+ */
+
+ @import "bootstrap";
+body {
+	background-color: #f9f9f9;
+}
+.gl-input {
+	font-family: 'pt_sansregular',sans-serif;
+font-size: 14px;
+font-weight: 300;
+color: #bababa;
+display: block;
+overflow: hidden;
+margin-bottom: 15px;
+width: 100%;
+border: 1px solid #eee;
+outline: 0;
+-webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+-o-border-radius: 3px;
+border-radius: 3px;
+line-height: 48px;
+height: 48px;
+padding: 0 15px;
+
+}
+.gl-but {
+	background-color: #87E1FB;
+}
+.gl-btn {
+	font-family: 'robotolight, robotoregular, robotobold',sans-serif;
+font-size: 14px;
+color: #fff;
+font-weight: 700;
+background-color: #ff5400;
+}
+.gl-comp-price {
+line-height: 60px;
+font-family: 'pt_sansregular',sans-serif;
+font-size: 21px;
+font-weight: 400;
+color: #ff5400;
+text-align: center;
+}

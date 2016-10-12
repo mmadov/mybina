@@ -1,0 +1,1 @@
+json.partial! "company_attachments/company_attachment", company_attachment: @company_attachment

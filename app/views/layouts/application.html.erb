@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html>
+
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+  <title>Myapp</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag :defaults, "nested_form" %>
+  <%= csrf_meta_tags %>
+  <%= yield(:css) %>
+
+<style type="text/css">
+.pac-container{background-color:#fff;position:absolute!important;z-index:1000;border-radius:2px;border-top:1px solid #d9d9d9;font-family:Arial,sans-serif;box-shadow:0 2px 6px rgba(0,0,0,0.3);-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;overflow:hidden}
+.pac-logo:after{content:"";padding:1px 1px 1px 0;height:16px;text-align:right;display:block;background-image:url(https://maps.gstatic.com/mapfiles/api-3/images/powered-by-google-on-white3.png);background-position:right;background-repeat:no-repeat;background-size:120px 14px}.hdpi.pac-logo:after{background-image:url(https://maps.gstatic.com/mapfiles/api-3/images/powered-by-google-on-white3_hdpi.png)}.pac-item{cursor:default;padding:0 4px;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;line-height:30px;text-align:left;border-top:1px solid #e6e6e6;font-size:11px;color:#999}.pac-item:hover{background-color:#fafafa}.pac-item-selected,.pac-item-selected:hover{background-color:#ebf2fe}.pac-matched{font-weight:700}.pac-item-query{font-size:13px;padding-right:3px;color:#000}.pac-icon{width:15px;height:20px;margin-right:7px;margin-top:6px;display:inline-block;vertical-align:top;background-image:url(https://maps.gstatic.com/mapfiles/api-3/images/autocomplete-icons.png);background-size:34px}.hdpi .pac-icon{background-image:url(https://maps.gstatic.com/mapfiles/api-3/images/autocomplete-icons_hdpi.png)}.pac-icon-search{background-position:-1px -1px}.pac-item-selected .pac-icon-search{background-position:-18px -1px}.pac-icon-marker{background-position:-1px -161px}.pac-item-selected .pac-icon-marker{background-position:-18px -161px}.pac-placeholder{color:gray}</style><meta charset="UTF-8"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="description" content=""><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><!-- PAGE TITLE --><title>Glimpse - Real Estate</title><link rel="shortcut icon" href="images/favicon.ico"><link rel="stylesheet" href="http://sites.redqteam.com/glimpse/real-estate/css/real-estate.style.css"><script style="" src="https://maps.googleapis.com/maps-api-v3/api/js/26/1/common.js" charset="UTF-8" type="text/javascript"></script><script src="https://maps.googleapis.com/maps-api-v3/api/js/26/1/util.js" charset="UTF-8" type="text/javascript"></script><script src="https://maps.googleapis.com/maps-api-v3/api/js/26/1/controls.js" charset="UTF-8" type="text/javascript"></script><script src="https://maps.googleapis.com/maps-api-v3/api/js/26/1/places_impl.js" charset="UTF-8" type="text/javascript"></script><script src="https://maps.googleapis.com/maps-api-v3/api/js/26/1/stats.js" charset="UTF-8" type="text/javascript"></script>
+<style>
+.gl-btn {font-family: 'robotolight, robotoregular, robotobold',sans-serif;
+font-size: 14px;
+color: #fff;
+font-weight: 700;
+background-color: #ff5400;}
+</style>
+<header >
+<header class="gl-header"><!-- TOPBAR --><div class="gl-header-topbar"><div class="container"><div class="row"><div class="gl-header-contact-info"><ul><li><i class="ion-ios-telephone-outline"></i>082 856 310</li><li><i class="ion-ios-email-outline"></i>info@mail.com</li></ul></div><div class="gl-social-icon-list"><ul><li><a href="#" class="gl-fb"><i class="fa fa-facebook"></i></a></li><li><a href="#" class="gl-twitter"><i class="fa fa-twitter"></i></a></li><li><a href="#" class="gl-behance"><i class="fa fa-behance"></i></a></li><li><a href="#" class="gl-dribbble"><i class="fa fa-dribbble"></i></a></li><li><a href="#" class="gl-vimeo"><i class="fa fa-vimeo"></i></a></li></ul></div></div></div></div><!-- END --><!-- BOTTOM BAR/NAVIGATION --><div class="gl-header-bottombar"><!-- Navigation Menu start--><nav class="navbar gl-header-main-menu" role="navigation"><div class="container"><!-- Navbar Toggle --><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button><!-- Logo --> <a class="navbar-brand" href="/"><img class="logo" src="images/logo-header.png" alt="GLIMPSE"></a></div><!-- Navbar Toggle End --><!-- navbar-collapse start--><div style="max-height: 623px;" id="nav-menu" class="navbar-collapse gl-menu-wrapper collapse" role="navigation">
+<ul class="nav navbar-nav gl-menus"><li class="active"><a href="/">Ana Sehife</a></li>
+	<li><a href="listing-style-1.html">Binalar</a></li>
+	<li><a href="property-details.html">Sirketler</a></li>
+	<li><a href="agent-profile.html">Kampaniyalar</a></li>
+	<li><a href="about-us.html">Elaqe</a></li>
+
+	
+	
+	</ul></div><!-- navbar-collapse end--><!-- OTHER BTNS -->
+	<div class="gl-extra-btns-wrapper"><!-- COMPARE BTN -->
+	<div class="gl-compare-icon"><div class="gl-compare-btn-wrapper"><span class="icon-bar"></span> <span class="icon-bar"></span></div>
+	</div><!-- END --><!-- PROFILE BTN --> 
+
+	<% if user_signed_in? %>
+	<% @postss = Company.where(:user_id => current_user.id ) 
+	if @postss.empty? %>
+	<%= link_to 'Sirket ac', new_company_path, class: "gl-btn" %>
+	<% else %>
+	<%= link_to 'Bina ac', new_home_path, class: "gl-btn" %>
+<% end %>
+
+     <%= link_to " exit", destroy_user_session_path, method: :delete, class: "gl-btn" %>
+<% else %>  <%= link_to 'Daxil ol', new_user_session_path, class: "gl-btn" %>  <%= link_to 'Qeydiyyat', new_user_registration_path, class: "gl-btn" %></div>
+<% end %>
+	<!-- PROFILE BTN END --></div><!-- END --></div></nav><!-- Navigation Menu end--></div><!-- END --></header>
+
+</header>
+<section style="height: 111px;" class="gl-fake-div"></section>
+
+  <body>
+      <%= yield %>
+
+<%= yield(:javascript) %><!-- We put our JavaScript tags here -->
+  </body>
+  <script type="text/javascript">
+  	$(".owl-carousel").owlCarousel({
+  		      autoPlay: 3000, //Set AutoPlay to 3 seconds
+ 
+      items : 4,
+      itemsDesktop : [1199,3],
+      itemsDesktopSmall : [979,3]
+  	});
+  </script>
+  <section class="gl-cta-section"><div class="container"><div class="row"><div class="gl-cta-content-wrapper"><p>Stay connected &amp; book the best table</p><form action="#" class="gl-newsletter-form"><input name="gl-newsletter-email" id="gl-newsletter-email" placeholder="Email" type="email"><div class="gl-realestate-location gl-location-dropdown"><select aria-hidden="true" tabindex="-1" class="gl-location-selection select2-hidden-accessible"><option>&nbsp;</option><option value="canada">Canada</option><option value="itally">Itally</option><option value="london">London</option></select><span style="width: 84px;" dir="ltr" class="select2 select2-container select2-container--default"><span class="selection"><span aria-labelledby="select2-mq8o-container" tabindex="0" class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false"><span id="select2-mq8o-container" class="select2-selection__rendered"><span class="select2-selection__placeholder">Canada</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span></div><input value="Submit" class="gl-btn" type="submit"></form></div></div></div></section>
+
+  <footer><!-- FOOTER TOP --><div class="gl-footer-top-wrapper"><div class="container"><div class="row"><!-- FOOTER WIDGET --><div style="height: 206px;" class="gl-footer-widget gl-footer-logo gl-footer-fixed-widget"><a href="#"><img src="images/logo-footer.png" alt="Glimpse"></a></div><!-- END --><!-- FOOTER WIDGET --><div style="height: 206px;" class="gl-footer-widget gl-contact-info"><h3 class="gl-footer-widget-title">Contact info</h3><div class="gl-footer-widget-content"><ul><li><i class="fa fa-map-marker"></i>Road 3, West side lane Texas, USA</li><li><i class="fa fa-phone"></i>0632 0152 001</li><li><i class="fa fa-envelope-o"></i>mail@gmail.com</li><li><i class="fa fa-globe"></i>www.glimpse.com</li></ul></div></div><!-- END --><!-- FOOTER WIDGET --><div style="height: 206px;" class="gl-footer-widget gl-useful-links"><h3 class="gl-footer-widget-title">Company</h3><div class="gl-footer-widget-content"><ul><li><a href="#">About Us</a></li><li><a href="#">History</a></li><li><a href="#">Career &amp; Goal</a></li><li><a href="#">Company Profile</a></li><li><a href="#">Process</a></li><li><a href="#">Account</a></li></ul></div></div><!-- END --><!-- FOOTER WIDGET --><div style="height: 206px;" class="gl-footer-widget gl-subscribe-widget"><h3 class="gl-footer-widget-title">Subscribe</h3><div class="gl-footer-widget-content"><p>Checkout and enjoy the biggest eco</p><form action="#"><input name="gl-subscription" id="gl-subscription" placeholder="Your email" type="email"> <button type="submit" class="gl-btn">Submit</button></form></div></div><!-- END --></div></div></div><!-- END --><!-- FOOTER BOTTOM --><div class="gl-footer-bottom-wrapper"><div class="container"><div class="row"><!-- COPYRIGHT INFO --><div class="gl-copyright-info-wrapper"><p>Copyright © 2016 Glimpse. All rights reserved</p></div><!-- COPYRIGHT INFO --><div class="gl-social-info-wrapper"><ul><li><a href="#"><i class="fa fa-facebook"></i></a></li><li><a href="#"><i class="fa fa-twitter"></i></a></li><li><a href="#"><i class="fa fa-behance"></i></a></li><li><a href="#"><i class="fa fa-dribbble"></i></a></li><li><a href="#"><i class="fa fa-vimeo"></i></a></li></ul></div></div></div></div><!-- END --></footer>
+</html>

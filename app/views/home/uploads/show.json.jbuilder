@@ -1,0 +1,1 @@
+json.partial! "home_uploads/home_upload", home_upload: @home_upload

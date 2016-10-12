@@ -1,0 +1,91 @@
+<section class="gl-about-page-header-wrapper" style="padding: 120px 0;"><div class="container"><div class="row"><h1 class="gl-page-title">Home</h1></div></div></section>
+<section class="gl-page-content-section" style="background-color: rgb(233, 233, 233);">
+<div class="container">
+<div class="row">
+<div class="col-md-6 col-sm-6 col-xs-12">
+<%= form_for(company) do |f| %>
+  <% if company.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(company.errors.count, "error") %> prohibited this company from being saved:</h2>
+
+      <ul>
+      <% company.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name , class: "gl-input" ,placeholder: "Sirketin adi"%>
+  </div>
+
+  <div class="field">
+    <%= f.label :about %>
+    <%= f.text_area :about , class: "gl-input" ,placeholder: "Haqqinda"%>
+  </div>
+  <div class="field">
+    <%= f.label :price %>
+    <%= f.text_area :price , class: "gl-input" ,placeholder: "1kv qiymeti"%>
+  </div>
+  <div class="field">
+    <%= f.label :slide %>
+    <%= f.file_field :slide%>
+  </div>
+
+  <div class="field">
+    <%= f.label :logo %>
+    <%= f.file_field :logo %>
+  </div>
+
+  <div class="field">
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+  </div>
+
+  <div class="field">
+    <%= f.label :adress %>
+    <%= f.text_field :adress , class: "gl-input" ,placeholder: "Unvan"%>
+  </div>
+
+  <div class="field">
+    <%= f.label :phone %>
+    <%= f.text_field :phone , class: "gl-input" ,placeholder: "Telefon"%>
+  </div>
+
+  <div class="field">
+    <%= f.label :facebook %>
+    <%= f.text_field :facebook , class: "gl-input" ,placeholder: "Facebook"%>
+  </div>
+
+  <div class="field">
+    <%= f.label :youtube %>
+    <%= f.text_field :youtube , class: "gl-input" ,placeholder: "Youtube"%>
+  </div>
+
+  <div class="field">
+    <%= f.label :web_site %>
+    <%= f.text_field :web_site , class: "gl-input" ,placeholder: "Web Site"%>
+  </div>
+
+  <div class="field">
+    <%= f.label :floor %>
+    <%= f.number_field :floor , class: "gl-input" ,placeholder: "Mertebelerin sayi"%>
+  </div>
+
+  <div class="field">
+    <%= f.label :part %>
+    <%= f.number_field :part , class: "gl-input" ,placeholder: "Bloklarin sayi"%>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+</div>
+<div class="gl-home-addresses-wrapper gl-right-side col-md-6 col-sm-6 col-xs-12"><div class="gl-address-col"><!-- ADDRESSES --><div class="gl-address"><h3 class="gl-single-title">Texas Office</h3><ul><li class="gl-address-location">Road 3, West side lane Texas, USA</li><li class="gl-address-phone">0632 0152 001</li><li class="gl-address-email">mail@gmail.com</li></ul></div><!-- END --><!-- ADDRESSES --><div class="gl-address"><h3 class="gl-single-title">New York</h3><ul><li class="gl-address-location">Road 3, West side lane Texas, USA</li><li class="gl-address-phone">0632 0152 001</li><li class="gl-address-email">mail@gmail.com</li></ul></div><!-- END --></div><div class="gl-address-col"><!-- ADDRESSES --><div class="gl-address"><h3 class="gl-single-title">Cansas Office</h3><ul><li class="gl-address-location">Road 3, West side lane Texas, USA</li><li class="gl-address-phone">0632 0152 001</li><li class="gl-address-email">mail@gmail.com</li></ul></div><!-- END --><!-- ADDRESSES --><div class="gl-address"><h3 class="gl-single-title">Arizona Office</h3><ul><li class="gl-address-location">Road 3, West side lane Texas, USA</li><li class="gl-address-phone">0632 0152 001</li><li class="gl-address-email">mail@gmail.com</li></ul></div><!-- END --></div></div>
+</div>
+</div>
+
+</section>

@@ -1,0 +1,46 @@
+<section class="gl-about-page-header-wrapper" style="padding: 120px 0;"><div class="container"><div class="row"><h1 class="gl-page-title">Home</h1></div></div></section>
+<section class="gl-page-content-section" style="background-color: rgb(233, 233, 233);">
+<div class="container">
+<div class="row">
+<div class="col-md-6 col-sm-6 col-xs-12">
+<%= form_for(@post, :html => { :multipart => true }) do |f| %>
+
+   <div class="field">
+    <%= f.select :room, Room.all.map{ |c| [c.name, c.id] } %>
+  </div>
+<div class="field">
+    <%= f.text_area :price , class: "gl-input" ,placeholder: "1kv qiymeti"%>
+  </div>
+
+  <div class="field">
+    <%= f.text_area :area , class: "gl-input" ,placeholder: "Sahe"%>
+  </div>
+
+  <div class="field">
+    <%= f.text_field :price_room , class: "gl-input" ,placeholder: "Evin qiymeti"%>
+  </div>
+
+  <div class="field">
+    <%= f.text_field :about , class: "gl-input" ,placeholder: "Haqqinda"%>
+  </div>
+  <!-- <%= f.nested_fields_for :post_attachments do |p| %>
+     <div class="field">
+       <%= p.label :avatar %><br>
+       <%= p.file_field :avatar, :multiple => true, name: "post_attachments[avatar][]" %>
+     </div>
+   <% end %>
+     <%= f.add_nested_fields_link :post_attachments %>
+-->
+  <div class="field">
+    <%= f.file_field :image , class: "gl-input"%>
+  </div>
+   <div class="actions">
+     <%= f.submit %>
+   </div>
+<% end %>
+</div>
+<div class="gl-home-addresses-wrapper gl-right-side col-md-6 col-sm-6 col-xs-12"><div class="gl-address-col"><!-- ADDRESSES --><div class="gl-address"><h3 class="gl-single-title">Texas Office</h3><ul><li class="gl-address-location">Road 3, West side lane Texas, USA</li><li class="gl-address-phone">0632 0152 001</li><li class="gl-address-email">mail@gmail.com</li></ul></div><!-- END --><!-- ADDRESSES --><div class="gl-address"><h3 class="gl-single-title">New York</h3><ul><li class="gl-address-location">Road 3, West side lane Texas, USA</li><li class="gl-address-phone">0632 0152 001</li><li class="gl-address-email">mail@gmail.com</li></ul></div><!-- END --></div><div class="gl-address-col"><!-- ADDRESSES --><div class="gl-address"><h3 class="gl-single-title">Cansas Office</h3><ul><li class="gl-address-location">Road 3, West side lane Texas, USA</li><li class="gl-address-phone">0632 0152 001</li><li class="gl-address-email">mail@gmail.com</li></ul></div><!-- END --><!-- ADDRESSES --><div class="gl-address"><h3 class="gl-single-title">Arizona Office</h3><ul><li class="gl-address-location">Road 3, West side lane Texas, USA</li><li class="gl-address-phone">0632 0152 001</li><li class="gl-address-email">mail@gmail.com</li></ul></div><!-- END --></div></div>
+</div>
+</div>
+
+</section>

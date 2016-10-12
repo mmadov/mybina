@@ -1,0 +1,309 @@
+<!-- PAGE HEADER -->
+<section class="gl-page-header-wrapper" style="background-image:url('<%= @company.slide %>')">
+  <div class="container">
+    <div class="row">
+      <h1><%= @company.name %> <span class="gl-item-status-label gl-sale-label">Sale</span></h1>
+      <p><i class="ion-ios-location-outline"></i><%= @company.adress %></p>
+
+      <div class="gl-page-head-btn-wrapper">
+        <a data-remodal-target="modal-share" class="gl-btn gl-icon-btn">Share</a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- PAGE HEADER -->
+
+<!-- PAGE CONTETNT -->
+<section class="gl-page-content-section" style="padding:0">
+  <div class="container">
+    <div class="row">
+      <!-- PAGE CONTENT DETAILS -->
+        <!-- GALLERY -->
+        <div class="gl-profile-gallery">
+          <ul class="gl-gallery">
+          <div class="owl-carousel">
+                    <% @image.each do |image| %>
+              <li style="width:100%;height:155px">
+                <a href="<%= image.image %>" class="gl-lightbox-img">
+                    <picture>
+                        <source media="(min-width: 768px)" srcset=<%= image.image %>>
+                        <img alt="Category Image" srcset=<%= image.image %> width="100%" height="155px">
+                    </picture>
+                </a>
+              </li>
+              <% end %>
+              </div>
+            </ul>
+        </div>
+        <!-- END -->
+      <div class="gl-page-content col-md-8 col-sm-8 col-xs-12">
+
+        <!-- ABOUT COMPANY -->
+        <div class="gl-page-contents-wrapper gl-about-company appear fadeIn" data-wow-duration=".5s" data-wow-delay=".5s" style="margin-top:0">
+          <h3 class="gl-content-title">Description</h3>
+
+          <p><%= @company.about %></p>
+        </div>
+        <!-- END -->
+
+        <!-- PROPERTY FEATURE -->
+        <div class="gl-page-contents-wrapper gl-property-feature-wrapper appear fadeIn" data-wow-duration="1s" data-wow-delay=".3s">
+          <h3 class="gl-content-title">Property Feature</h3>
+
+          <div class="gl-property-features">
+            <ul>
+              <li><i class="ion-checkmark"></i>Balcony</li>
+              <li><i class="ion-checkmark"></i>Balcony</li>
+              <li><i class="ion-checkmark"></i>Balcony</li>
+              <li><i class="ion-checkmark"></i>Garage</li>
+              <li><i class="ion-checkmark"></i>Garage</li>
+              <li><i class="ion-checkmark"></i>Garage</li>
+              <li><i class="ion-checkmark"></i>Wooden floor</li>
+              <li><i class="ion-checkmark"></i>Wooden floor</li>
+              <li><i class="ion-checkmark"></i>Wooden floor</li>
+              <li><i class="ion-checkmark"></i>Daining room</li>
+              <li><i class="ion-checkmark"></i>Daining room</li>
+              <li><i class="ion-checkmark"></i>Daining room</li>
+              <li><i class="ion-checkmark"></i>Bedroom</li>
+              <li><i class="ion-checkmark"></i>Bedroom</li>
+              <li><i class="ion-checkmark"></i>Bedroom</li>
+            </ul>
+          </div>
+        </div>
+        <!-- END -->
+
+        <!-- Floor Plan -->
+        <div class="gl-page-contents-wrapper gl-floor-plan-wrapper appear fadeIn" data-wow-duration=".5s" data-wow-delay=".5s">
+          <h3 class="gl-content-title">Floor plan</h3>
+
+          <div class="gl-floor-plan-accordion">
+            <div class="panel-group" id="gl-floorplan" role="tablist" aria-multiselectable="true">
+              <!-- FLoor plan item -->
+                    <% @room.each do |room| %>
+              <div class="panel panel-default gl-floorplan-item">
+                <!-- header -->
+                <div class="gl-floorplan-item-wrapper panel-heading" role="tab" id="gl-floorplan-<%= room.id %>">
+                  <a role="button" data-toggle="collapse" data-parent="#gl-floorplan" href="#gl-floorplan-<%= room.id %>-Details" aria-expanded="true" aria-controls="gl-floorplan-<%= room.id %>-Details">
+                    <h3><%= room.name %></h3>
+                    <span class="gl-toggle-symbol">
+                      <i class="ion-ios-plus-empty"></i>
+                    </span>
+                  </a>
+                </div>
+                <!-- END -->
+                       <% @posts = Post.where(company_id: @company.id,room: room.id).all %>
+                    <% @posts.each do |post| %>
+
+                <!-- Details -->
+                <div id="gl-floorplan-<%= room.id %>-Details" class="panel-collapse collapse gl-floorplan-details" role="tabpanel" aria-labelledby="gl-floorplanOne">
+                  <div class="panel-body">
+                    <img src="<%= post.image %>" alt="<%= post.image %>" class="gl-lazy" data-pagespeed-url-hash="3242599267" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                  </div>
+                </div>
+                <% end %>
+                <!-- END -->
+              </div>
+              <% end %>
+              <!-- End -->
+
+              <!-- FLoor plan item -->
+         
+              <!-- End -->
+
+              <!-- FLoor plan item -->
+      
+              <!-- End -->
+            </div>
+
+          </div>
+        </div>
+        <!-- END -->
+
+        <!-- PROPERTY FEATURE -->
+        <div class="gl-page-contents-wrapper gl-location-map-wrapper appear fadeIn" data-wow-duration=".5s" data-wow-delay=".3s">
+          <h3 class="gl-content-title">Location Map</h3>
+
+          <div class="gl-location-map">
+            <div id="gl-map-small"></div>
+          </div>
+        </div>
+        <!-- END -->
+
+        <!-- Agent Form -->
+        <div class="gl-page-contents-wrapper gl-agent-contact-wrapper appear fadeIn" data-wow-duration=".5s" data-wow-delay=".5s">
+          <div class="gl-agent-info-wrapper gl-same-height">
+            <div class="gl-agent-img-wrapper">
+              <img src="images/xagents-3.jpg.pagespeed.ic.21yCu8wZfT.jpg" alt="Agent" class="gl-lazy" data-pagespeed-url-hash="3454838305" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+            </div>
+
+            <div class="gl-agent-infos">
+              <ul>
+                <li class="gl-agent-name">
+                  <h3><a href="agent_profile.html">Maria</a></h3>
+                  <p>Buying Agent</p>
+                </li>
+
+                <li><i class="ion-ios-telephone-outline"></i>082 856 310</li>
+                <li><i class="ion-ios-email-outline"></i>info@mail.com</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="gl-agent-contact-form gl-same-height">
+            <h3 class="gl-content-title">Contact Agent</h3>
+            <form action="#">
+              <input type="text" name="gl-agent-name" id="gl-agent-name" placeholder="Name">
+              <input type="email" name="gl-agent-email" id="gl-agent-email" placeholder="Email">
+              <textarea name="gl-agent-msg" id="gl-agent-msg" cols="30" rows="3" placeholder="Message"></textarea>
+              <button type="submit" class="gl-btn">Send</button>
+            </form>
+          </div>
+        </div>
+        <!-- END -->
+      </div>
+      <!-- PAGE CONTENT DETAILS END -->
+
+      <!-- SIDEBAR -->
+      <div class="gl-sidebar gl-page-sidebar col-md-4 col-sm-4 col-xs-12">
+        <!-- OVERVIEW WIDGET -->
+        <div class="gl-sidebar-widget gl-overview-widget">
+          <div class="gl-overview-wrapper">
+          <h3>  <%= @company.name %>  </h3>
+  <%= image_tag @company.logo %>
+  <ul>
+  <li><b>Tel.:</b><%= @company.phone %> </li>
+  <li><b>Mertebe sayi: </b><%= @company.floor %> </li>
+  <li><b>Blok sayi: </b><%= @company.part %> </li>
+  </ul>
+          </div>
+
+          <div class="gl-overview-btns-wrapper">
+            <p style="text-align: center;
+font-weight: 400;
+padding: 20px;
+font-size: 21px;
+color: #CC5017;"><%= @company.price %> AZN</p>
+            
+          </div>
+        </div>
+        <!-- END -->
+
+        <!-- RELATED PROPERTIES WIDGET -->
+        <div class="gl-sidebar-widget gl-related-widget">
+          <h3 class="gl-sidebar-title">Related Properties</h3>
+
+          <!-- FEATURED ITEMS -->
+          <div class="gl-featured-items">
+            <div class="gl-feat-items-img-wrapper">
+              <picture>
+                    <source media="(min-width: 768px)" srcset=images/real-estate-img-3-lg.jpg>
+                    <img alt="Category Image" srcset=images/real-estate-img-3.jpg>
+                </picture>
+
+              <span class="gl-price-tag">$3,000</span>
+            </div>
+
+            <div class="gl-feat-item-details">
+              <span class="gl-item-status-label gl-sold-label">Sold</span>
+
+              <h3>
+                <a href="#">Lake Cafe</a>
+              </h3>
+              <div class="gl-item-location">
+                <i class="ion-ios-location-outline"></i>
+                <span>Road 3, West Portland, USA</span>
+              </div>
+            </div>
+
+            <div class="gl-feat-item-metas">
+                <ul class="gl-feature-info">
+                  <li>Beds<span>3</span>
+                  </li>
+                  <li>Baths<span>2</span>
+                  </li>
+                  <li>Area<span>900 sqft</span>
+                  </li>
+                </ul>
+
+                <ul class="gl-wishlist-compare-wrapper">
+                    <li>
+                        <a href="#" class="gl-add-wishlist">
+                            <i class="fa fa-heart-o"></i>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="gl-add-compare">
+                            <div class="gl-compare-btn">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+          </div>
+          <!-- END -->
+
+          <!-- FEATURED ITEMS -->
+          <div class="gl-featured-items">
+            <div class="gl-feat-items-img-wrapper">
+                <picture>
+                    <source media="(min-width: 768px)" srcset=images/real-estate-img-5-lg.jpg>
+                    <img alt="Category Image" srcset=images/real-estate-img-5.jpg>
+                </picture>
+
+              <span class="gl-price-tag">$300</span>
+            </div>
+
+            <div class="gl-feat-item-details">
+              <span class="gl-item-status-label gl-rent-label">Rent</span>
+
+              <h3>
+                <a href="#">Lake Cafe</a>
+              </h3>
+              <div class="gl-item-location">
+                <i class="ion-ios-location-outline"></i>
+                <span>Road 3, West Portland, USA</span>
+              </div>
+            </div>
+
+            <div class="gl-feat-item-metas">
+                <ul class="gl-feature-info">
+                  <li>Beds<span>3</span>
+                  </li>
+                  <li>Baths<span>2</span>
+                  </li>
+                  <li>Area<span>900 sqft</span>
+                  </li>
+                </ul>
+
+                <ul class="gl-wishlist-compare-wrapper">
+                    <li>
+                        <a href="#" class="gl-add-wishlist">
+                            <i class="fa fa-heart-o"></i>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="gl-add-compare">
+                            <div class="gl-compare-btn">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+          </div>
+          <!-- END -->
+        </div>
+        <!-- END -->
+      </div>
+      <!-- SIDEBAR END -->
+    </div>
+  </div>
+</section>
+<!-- PAGE CONTETNT END -->
