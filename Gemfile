@@ -35,6 +35,7 @@ gem "paperclip"
 gem 'dropzonejs-rails'
 gem 'rails_admin'
 gem 'devise'
+gem "rails-settings", :git => "https://github.com/renderedtext/rails-settings.git"
 gem "nested_form"
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
