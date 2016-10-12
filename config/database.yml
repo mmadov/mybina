@@ -11,10 +11,10 @@ default: &default
 
 development:
   adapter: mysql2
-  database: heroku_209c222a4f7a545
-  username: b48b2f7876b246
-  password: ecb58339
-  host: us-cdbr-iron-east-04.cleardb.net
+  database: my_bina
+  username: root
+  password: mamedov
+  host: localhost
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -24,8 +24,5 @@ test:
   database: db/test.sqlite3
 
 production:
- adapter: mysql2
-  database: heroku_209c222a4f7a545
-  username: b48b2f7876b246
-  password: ecb58339
-  host: us-cdbr-iron-east-04.cleardb.net
+  <<: *default
+  database: db/production.sqlite3
