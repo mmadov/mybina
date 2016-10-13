@@ -23,6 +23,7 @@ gem 'carrierwave'
 gem 'owlcarousel-rails'
 gem 'bootstrap-sass' 
 gem 'mini_magick'
+gem 'cloudinary'
 gem 'nested_form_fields'
 gem 'remotipart', '~> 1.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
@@ -31,6 +32,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'mysql2'
 gem "paperclip"
+gem "mini_magick"
 gem 'dropzonejs-rails'
 gem 'rails_admin'
 gem 'devise'

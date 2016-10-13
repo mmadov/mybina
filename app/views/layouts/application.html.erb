@@ -5,6 +5,9 @@
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
   <title>Myapp</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag :defaults, "nested_form" %>
   <%= csrf_meta_tags %>
@@ -38,13 +41,13 @@ background-color: #ff5400;}
 	<% if user_signed_in? %>
 	<% @postss = Company.where(:user_id => current_user.id ) 
 	if @postss.empty? %>
-	<%= link_to 'Sirket ac', new_company_path, class: "gl-btn" %>
+	<%= link_to 'Sirket ac', new_company_path, class: "gl-btn",style:"color:#fff" %>
 	<% else %>
-	<%= link_to 'Bina ac', new_home_path, class: "gl-btn" %>
+	<%= link_to 'Bina ac', new_home_path, class: "gl-btn" ,style:"color:#fff" %>
 <% end %>
 
-     <%= link_to " exit", destroy_user_session_path, method: :delete, class: "gl-btn" %>
-<% else %>  <%= link_to 'Daxil ol', new_user_session_path, class: "gl-btn" %>  <%= link_to 'Qeydiyyat', new_user_registration_path, class: "gl-btn" %></div>
+     <%= link_to " exit", destroy_user_session_path, method: :delete, class: "gl-btn" ,style:"color:#fff"%>
+<% else %>  <%= link_to 'Daxil ol', new_user_session_path, class: "gl-btn" ,style:"color:#fff"%>  <%= link_to 'Qeydiyyat', new_user_registration_path, class: "gl-btn",style:"color:#fff" %></div>
 <% end %>
 	<!-- PROFILE BTN END --></div><!-- END --></div></nav><!-- Navigation Menu end--></div><!-- END --></header>
 

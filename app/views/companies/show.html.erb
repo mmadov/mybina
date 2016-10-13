@@ -92,15 +92,23 @@
                 </div>
                 <!-- END -->
                        <% @posts = Post.where(company_id: @company.id,room: room.id).all %>
-                    <% @posts.each do |post| %>
+                   
 
                 <!-- Details -->
                 <div id="gl-floorplan-<%= room.id %>-Details" class="panel-collapse collapse gl-floorplan-details" role="tabpanel" aria-labelledby="gl-floorplanOne">
-                  <div class="panel-body">
+                 <% @posts.each do |post| %>
+                  <div class="panel-body" style="border-top:solid #f2f2f2">
+                  <div class="col-md-3" >
+                  <h3><b><%= post.area %></b> m²</h3>
+                  <%= post.about %>
+                  </div>
+                  <div class="col-md-9" style="border-left:solid #f2f2f2">
                     <img src="<%= post.image %>" alt="<%= post.image %>" class="gl-lazy" data-pagespeed-url-hash="3242599267" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
                   </div>
+                  </div>
+                    <% end %>
                 </div>
-                <% end %>
+              
                 <!-- END -->
               </div>
               <% end %>
