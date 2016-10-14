@@ -6,7 +6,8 @@
 <input autocomplete="off" name="gl-search-location" id="gl-search-location" class="gl-directory-input" placeholder="Location" type="text">
 <div class="gl-jobs-category gl-category-dropdown">
 
-<select aria-hidden="true" tabindex="-1" class="gl-category-dropdown-selection select2-hidden-accessible"><option>&nbsp;</option><option value="Corp">Corporate</option><option value="Pub">Public</option><option value="Int">International</option></select>
+    <%= f.select :region, Region.all.map{ |c| [c.name, c.id] } %>
+
 <span style="width: 118px;" dir="ltr" class="select2 select2-container select2-container--default">
 <span class="selection">
 <span aria-labelledby="select2-z4pr-container" tabindex="0" class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false">
