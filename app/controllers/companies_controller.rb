@@ -76,6 +76,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def company_params
-      params.require(:company).permit(:name, :about, :slide, :logo, :image, :adress, :user_id,:price, :phone, :facebook, :youtube, :web_site, :floor, :part)
+      params.require(:company).permit(:name, :about, :slide, :logo, :image, :adress, :user_id,:price, :phone, :facebook, :youtube, :web_site, :floor, :region, :part)
     end
 end
