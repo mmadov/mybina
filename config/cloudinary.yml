@@ -1,0 +1,18 @@
+development:
+  cloud_name: hjwvs4sfi
+  api_key: '247287129366682'
+  api_secret: cPkRcE6w0G52_KhulH8ncNKbamM
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: hjwvs4sfi
+  api_key: '247287129366682'
+  api_secret: cPkRcE6w0G52_KhulH8ncNKbamM
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: hjwvs4sfi
+  api_key: '247287129366682'
+  api_secret: cPkRcE6w0G52_KhulH8ncNKbamM
+  enhance_image_tag: true
+  static_image_support: false
