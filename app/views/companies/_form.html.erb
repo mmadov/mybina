@@ -3,7 +3,9 @@
 <div class="container">
 <div class="row">
 <div class="col-md-6 col-sm-6 col-xs-12">
-<%= form_for(company) do |f| %>
+<%= form_for(company,id: "gl-bz-directory-form") do |f| %>
+<fieldset>
+
   <% if company.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(company.errors.count, "error") %> prohibited this company from being saved:</h2>
@@ -20,6 +22,7 @@
     <%= f.label :name %>
     <%= f.text_field :name , class: "gl-input" ,placeholder: "Sirketin adi"%>
   </div>
+
 
   <div class="field">
     <%= f.label :about %>
@@ -43,6 +46,16 @@
     <%= f.label :image %>
     <%= f.file_field :image %>
   </div>
+    <div class="field">
+
+<div class="gl-jobs-category gl-category-dropdown" style="padding-top: 10px;padding-left: 10px;padding-right: 10px;
+background: #fff;">
+
+<% cities_array = Region.all.map { |city| [city.name, city.id] } %>
+    <%= select_tag(:region,options_for_select(cities_array),{include_blank: "Select something",class:"gl-category-dropdown-selection select2-hidden-accessible"}) %>
+    <span style="width: 118px;" dir="ltr" class="select2 select2-container select2-container--default" >
+
+  <span class="dropdown-wrapper" aria-hidden="true"></span></span></div></div>
 
   <div class="field">
     <%= f.label :adress %>
@@ -78,6 +91,7 @@
     <%= f.label :part %>
     <%= f.number_field :part , class: "gl-input" ,placeholder: "Bloklarin sayi"%>
   </div>
+</fieldset>
 
   <div class="actions">
     <%= f.submit %>

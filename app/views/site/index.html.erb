@@ -1,25 +1,21 @@
 <section class="gl-hero-img-wrapper" style="padding:150px 0;"><div class="container"><div class="row"><div class="container"><div class="row"><div class="gl-elements-content-wrapper"><div style="display: none;" id="typed-strings"><h2 id="gl-slogan" class="gl-hero-text-heading">Find the <span class="gl-color-text">best</span> job for you</h2><p>Find the <span class="gl-color-text">best</span> job for you</p></div><h2 id="gl-slogan" class="gl-hero-text-heading">Find the <span class="gl-color-text">best</span> job for you</h2><span class="typed-cursor">|</span><p class="gl-hero-text-paragraph">Glimpse theme is providing you the best directory services from <span class="gl-color-text">+150</span> leading companies</p><!-- DIRECTORY FORM -->
 <div class="gl-directory-searchbar gl-bz-directory-searchbar">
-<form action="#" id="gl-bz-directory-form">
+<%= form_tag(companies_path, :method => "get", id: "gl-bz-directory-form") do  |f| %>
 <fieldset>
 <input name="gl-jobs-keyword" id="gl-jobs-keyword" class="gl-directory-input" placeholder="Keywords" type="text"> 
 <input autocomplete="off" name="gl-search-location" id="gl-search-location" class="gl-directory-input" placeholder="Location" type="text">
 <div class="gl-jobs-category gl-category-dropdown">
 
-    <%= f.select :region, Region.all.map{ |c| [c.name, c.id] } %>
+    <% cities_array = Region.all.map { |city| [city.name, city.id] } %>
+    <%= select_tag(:region,options_for_select(cities_array),{include_blank: "Select something",class:"gl-category-dropdown-selection select2-hidden-accessible"}) %>
 
 <span style="width: 118px;" dir="ltr" class="select2 select2-container select2-container--default">
-<span class="selection">
-<span aria-labelledby="select2-z4pr-container" tabindex="0" class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false">
-<span id="select2-z4pr-container" class="select2-selection__rendered"><span class="select2-selection__placeholder">Category</span></span>
-<span class="select2-selection__arrow" role="presentation">
-<b role="presentation"></b></span></span></span>
-<span class="dropdown-wrapper" aria-hidden="true"></span></span></div></fieldset>
-<button type="submit" class="gl-icon-btn" style="background: #ff5400;"><i class="fa fa-search"></i> Search</button></form></div><!-- END --></div></div></div></section>
 
-<%= form_tag(companies_path, :method => "get", id: "search-form") do %>
-    <%= text_field_tag :search, params[:search], placeholder: "Search Recipes" %>
-    <%= submit_tag "Search", :name => nil %>
+<span class="dropdown-wrapper" aria-hidden="true"></span></span></div></fieldset>
+<%= button_to(companies_path,
+  class: 'gl-icon-btn',style:'background: #ff5400') do %>
+ <i class="fa fa-search"></i> Search <% end %>
+</div><!-- END --></div></div></div></section>
 <% end %>
 
 
