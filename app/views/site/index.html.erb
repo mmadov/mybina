@@ -16,6 +16,11 @@
 <span class="dropdown-wrapper" aria-hidden="true"></span></span></div></fieldset>
 <button type="submit" class="gl-icon-btn" style="background: #ff5400;"><i class="fa fa-search"></i> Search</button></form></div><!-- END --></div></div></div></section>
 
+<%= form_tag(companies_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search Recipes" %>
+    <%= submit_tag "Search", :name => nil %>
+<% end %>
+
 
 
 	<section class="gl-feat-properties-section gl-section-wrapper" id="gl-next-section"><div class="container"><div class="row"><!-- SECTION HEADINGS --><div class="gl-section-headings"><h1>Featured Property</h1><p>Checkout and enjoy the biggest unlimited possiblities</p></div><!-- END --><!-- WRAPPER --><div class="gl-featured-listing-wrapper"><!-- FEATURED ITEMS -->

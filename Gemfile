@@ -26,6 +26,8 @@ gem 'mini_magick'
 gem 'cloudinary'
 gem 'nested_form_fields'
 gem 'remotipart', '~> 1.2'
+
+
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
