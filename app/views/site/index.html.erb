@@ -3,14 +3,14 @@
 <%= form_tag(companies_path, method: "get", id: "gl-bz-directory-form") do  %>
 <fieldset>
 
-    <%= text_field_tag :search, params[:search], placeholder: "Sirketin adi" %>
+    <%= text_field_tag :name, placeholder: "Sirketin adi" %>
 
-       <%= text_field_tag :search, params[:search], placeholder: "1kv qiymeti" %>
+       <%= text_field_tag :price, placeholder: "1kv qiymeti" %>
 
 <div class="gl-jobs-category gl-category-dropdown">
 
     <% cities_array = Region.all.map { |city| [city.name, city.id] } %>
-    <%= select_tag(:search,options_for_select(cities_array),{include_blank: "Select something",class:"gl-category-dropdown-selection select2-hidden-accessible"}) %>
+    <%= select_tag(:region,options_for_select(cities_array),{include_blank: "Select something",class:"gl-category-dropdown-selection select2-hidden-accessible"}) %>
 
 <span style="width: 118px;" dir="ltr" class="select2 select2-container select2-container--default">
 
