@@ -10,6 +10,25 @@
 body {
 	background-color: #f9f9f9;
 }
+#company_region_id {
+	color: #888;
+font-size: 14px;
+font-weight: 300;
+line-height: 3.3;
+padding-left: 0;
+width: 100% !important;
+padding: 0 40px 0 45px;
+text-align: left;
+background-color: #fff;
+border: 0 solid #fff;
+border-radius: 0;
+height: 30px;
+outline: 0;
+}
+#company_region_id > option {
+border-bottom: 1px solid #eee;
+padding: 10px 45px;
+}
 .gl-input {
 	font-family: 'pt_sansregular',sans-serif;
 font-size: 14px;

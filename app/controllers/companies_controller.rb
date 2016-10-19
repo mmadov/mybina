@@ -6,7 +6,8 @@ class CompaniesController < ApplicationController
 def index
   @companies = Company.all
   if params[:name]
-    @companies = Company.search(params[:name],params[:price],params[:region]).order("created_at DESC")
+    @companies = Company.search(params[:name],params[:price],params[:region_id]).order("created_at DESC")
+  
   else
     @companies = Company.all.order("created_at DESC")
   end
@@ -33,6 +34,7 @@ end
   def create
     @company = Company.new(company_params)
    @company.user_id = current_user.id
+   @company.region_id = params[:region_id]
     respond_to do |format|
       if @company.save
         format.html { redirect_to @company, notice: 'Company was successfully created.' }
@@ -76,6 +78,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def company_params
-      params.require(:company).permit(:name, :about, :slide, :logo, :image, :adress, :user_id,:price, :phone, :facebook, :youtube, :web_site, :floor, :region, :part)
+      params.require(:company).permit(:name, :about, :slide, :logo, :image, :adress, :user_id,:price, :phone, :facebook, :youtube, :web_site, :floor, :region_id, :part)
     end
 end

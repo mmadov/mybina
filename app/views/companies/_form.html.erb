@@ -19,76 +19,65 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %>
     <%= f.text_field :name , class: "gl-input" ,placeholder: "Sirketin adi"%>
   </div>
 
 
   <div class="field">
-    <%= f.label :about %>
     <%= f.text_area :about , class: "gl-input" ,placeholder: "Haqqinda"%>
   </div>
   <div class="field">
-    <%= f.label :price %>
     <%= f.text_area :price , class: "gl-input" ,placeholder: "1kv qiymeti"%>
   </div>
   <div class="field">
-    <%= f.label :slide %>
     <%= f.file_field :slide%>
   </div>
 
   <div class="field">
-    <%= f.label :logo %>
     <%= f.file_field :logo %>
   </div>
 
-  <div class="field">
-    <%= f.label :image %>
+ <div class="file">
     <%= f.file_field :image %>
   </div>
     <div class="field">
+</div>
 
-<div class="gl-jobs-category gl-category-dropdown" style="padding-top: 10px;padding-left: 10px;padding-right: 10px;
-background: #fff;">
+<div class="gl-jobs-category gl-category-dropdown">
 
-<% cities_array = Region.all.map { |city| [city.name, city.id] } %>
-    <%= select_tag(:region,options_for_select(cities_array),{include_blank: "Select something",class:"gl-category-dropdown-selection select2-hidden-accessible"}) %>
-    <span style="width: 118px;" dir="ltr" class="select2 select2-container select2-container--default" >
+    <%= f.collection_select(:region_id, Region.all, :id, :name, {:include_blank => "Please select"},{class:"gl-category-dropdown-selection select2-hidden-accessible"}) %>
 
-  <span class="dropdown-wrapper" aria-hidden="true"></span></span></div></div>
+
+<span style="width: 118px;" dir="ltr"  class="select2 select2-container select2-container--default" style="">
+
+<span class="dropdown-wrapper" aria-hidden="true"></span></span></div>
+
 
   <div class="field">
-    <%= f.label :adress %>
     <%= f.text_field :adress , class: "gl-input" ,placeholder: "Unvan"%>
   </div>
 
   <div class="field">
-    <%= f.label :phone %>
     <%= f.text_field :phone , class: "gl-input" ,placeholder: "Telefon"%>
   </div>
 
   <div class="field">
-    <%= f.label :facebook %>
     <%= f.text_field :facebook , class: "gl-input" ,placeholder: "Facebook"%>
   </div>
 
   <div class="field">
-    <%= f.label :youtube %>
     <%= f.text_field :youtube , class: "gl-input" ,placeholder: "Youtube"%>
   </div>
 
   <div class="field">
-    <%= f.label :web_site %>
     <%= f.text_field :web_site , class: "gl-input" ,placeholder: "Web Site"%>
   </div>
 
   <div class="field">
-    <%= f.label :floor %>
     <%= f.number_field :floor , class: "gl-input" ,placeholder: "Mertebelerin sayi"%>
   </div>
 
   <div class="field">
-    <%= f.label :part %>
     <%= f.number_field :part , class: "gl-input" ,placeholder: "Bloklarin sayi"%>
   </div>
 </fieldset>
