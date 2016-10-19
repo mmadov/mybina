@@ -18,15 +18,20 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field" id="form_s">
+  <p>Sirketin adi</p>
     <%= f.text_field :name , class: "gl-input" ,placeholder: "Sirketin adi"%>
   </div>
 
 
-  <div class="field">
+  <div class="field" id="form_s">
+    <p>Sirketin Haqqinda</p>
+
     <%= f.text_area :about , class: "gl-input" ,placeholder: "Haqqinda"%>
   </div>
-  <div class="field">
+  <div class="field" id="form_s">
+    <p>1kv ucun orta qiymet</p>
+
     <%= f.text_area :price , class: "gl-input" ,placeholder: "1kv qiymeti"%>
   </div>
   <div class="field" id="photo">
@@ -65,31 +70,45 @@ background: #fff;
 <span class="dropdown-wrapper" aria-hidden="true"></span></span></div>
 
 
-  <div class="field">
+  <div class="field" id="form_s">
+    <p>Binanin unvani</p>
+
     <%= f.text_field :adress , class: "gl-input" ,placeholder: "Unvan"%>
   </div>
 
-  <div class="field">
+  <div class="field" id="form_s">
+    <p>Telefon nomresi</p>
+
     <%= f.text_field :phone , class: "gl-input" ,placeholder: "Telefon"%>
   </div>
 
-  <div class="field">
+  <div class="field" id="form_s">
+    <p>Facebook</p>
+
     <%= f.text_field :facebook , class: "gl-input" ,placeholder: "Facebook"%>
   </div>
 
-  <div class="field">
+  <div class="field" id="form_s">
+    <p>Youtube</p>
+
     <%= f.text_field :youtube , class: "gl-input" ,placeholder: "Youtube"%>
   </div>
 
-  <div class="field">
+  <div class="field" id="form_s">
+    <p>Web sayt</p>
+
     <%= f.text_field :web_site , class: "gl-input" ,placeholder: "Web Site"%>
   </div>
 
-  <div class="field">
+  <div class="field" id="form_s">
+    <p>Mertebelerin sayi</p>
+
     <%= f.number_field :floor , class: "gl-input" ,placeholder: "Mertebelerin sayi"%>
   </div>
 
-  <div class="field">
+  <div class="field" id="form_s">
+    <p>Bloklarin sayi</p>
+
     <%= f.number_field :part , class: "gl-input" ,placeholder: "Bloklarin sayi"%>
   </div>
 </fieldset>
