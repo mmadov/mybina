@@ -2,7 +2,6 @@
 <section class="gl-page-content-section" style="background-color: rgb(233, 233, 233);">
 <div class="container">
 <div class="row">
-<div class="col-md-6 col-sm-6 col-xs-12">
 <%= form_for(company,id: "gl-bz-directory-form") do |f| %>
 <fieldset>
 
@@ -18,39 +17,47 @@
     </div>
   <% end %>
 
-  <div class="field" id="form_s">
+  <div class="field col-md-6" id="form_s">
   <p>Sirketin adi</p>
     <%= f.text_field :name , class: "gl-input" ,placeholder: "Sirketin adi"%>
   </div>
-
-
-  <div class="field" id="form_s">
-    <p>Sirketin Haqqinda</p>
-
-    <%= f.text_area :about , class: "gl-input" ,placeholder: "Haqqinda"%>
-  </div>
-  <div class="field" id="form_s">
+<div class="field col-md-6" id="form_s">
     <p>1kv ucun orta qiymet</p>
 
     <%= f.text_area :price , class: "gl-input" ,placeholder: "1kv qiymeti"%>
   </div>
-  <div class="field" id="photo">
+
+  <div class="field col-md-12" id="form_s">
+    <p>Sirketin Haqqinda</p>
+
+    <%= f.text_area :about , class: "gl-input" ,placeholder: "Haqqinda"%>
+  </div>
+  
+  <div class="field col-md-6" id="photo">
   <p >Slide</p>
     <%= f.file_field :slide%>
   </div>
 
-  <div class="field" id="photo">
+  <div class="field col-md-6" id="photo">
     <p>Logo</p>
 
     <%= f.file_field :logo %>
   </div>
 
- <div class="file" id="photo">
+ <div class="file col-md-12" id="photo">
    <p>Photo</p>
 
     <%= f.file_field :image %>
   </div>
-    <div class="field"  id="form_s" style="margin-top:10px;">
+
+
+
+  <div class="field col-md-6" id="form_s" style="margin-top:10px;">
+    <p>Binanin unvani</p>
+
+    <%= f.text_field :adress , class: "gl-input" ,placeholder: "Unvan"%>
+  </div>
+    <div class="field col-md-6"  id="form_s" style="margin-top:10px;">
 
  <p>Kategoriyani secin</p>
 <style>
@@ -69,44 +76,37 @@ background: #fff;
 
 <span class="dropdown-wrapper" aria-hidden="true"></span></span></div>
 </div>
-
-  <div class="field" id="form_s">
-    <p>Binanin unvani</p>
-
-    <%= f.text_field :adress , class: "gl-input" ,placeholder: "Unvan"%>
-  </div>
-
-  <div class="field" id="form_s">
+  <div class="field col-md-6" id="form_s">
     <p>Telefon nomresi</p>
 
     <%= f.text_field :phone , class: "gl-input" ,placeholder: "Telefon"%>
   </div>
 
-  <div class="field" id="form_s">
+  <div class="field col-md-6" id="form_s">
     <p>Facebook</p>
 
     <%= f.text_field :facebook , class: "gl-input" ,placeholder: "Facebook"%>
   </div>
 
-  <div class="field" id="form_s">
+  <div class="field col-md-6" id="form_s">
     <p>Youtube</p>
 
     <%= f.text_field :youtube , class: "gl-input" ,placeholder: "Youtube"%>
   </div>
 
-  <div class="field" id="form_s">
+  <div class="field col-md-6" id="form_s">
     <p>Web sayt</p>
 
     <%= f.text_field :web_site , class: "gl-input" ,placeholder: "Web Site"%>
   </div>
 
-  <div class="field" id="form_s">
+  <div class="field col-md-6" id="form_s">
     <p>Mertebelerin sayi</p>
 
     <%= f.number_field :floor , class: "gl-input" ,placeholder: "Mertebelerin sayi"%>
   </div>
 
-  <div class="field" id="form_s">
+  <div class="field col-md-6" id="form_s">
     <p>Bloklarin sayi</p>
 
     <%= f.number_field :part , class: "gl-input" ,placeholder: "Bloklarin sayi"%>
@@ -117,8 +117,7 @@ background: #fff;
     <%= f.submit %>
   </div>
 <% end %>
-</div>
-<div class="gl-home-addresses-wrapper gl-right-side col-md-6 col-sm-6 col-xs-12"><div class="gl-address-col"><!-- ADDRESSES --><div class="gl-address"><h3 class="gl-single-title">Texas Office</h3><ul><li class="gl-address-location">Road 3, West side lane Texas, USA</li><li class="gl-address-phone">0632 0152 001</li><li class="gl-address-email">mail@gmail.com</li></ul></div><!-- END --><!-- ADDRESSES --><div class="gl-address"><h3 class="gl-single-title">New York</h3><ul><li class="gl-address-location">Road 3, West side lane Texas, USA</li><li class="gl-address-phone">0632 0152 001</li><li class="gl-address-email">mail@gmail.com</li></ul></div><!-- END --></div><div class="gl-address-col"><!-- ADDRESSES --><div class="gl-address"><h3 class="gl-single-title">Cansas Office</h3><ul><li class="gl-address-location">Road 3, West side lane Texas, USA</li><li class="gl-address-phone">0632 0152 001</li><li class="gl-address-email">mail@gmail.com</li></ul></div><!-- END --><!-- ADDRESSES --><div class="gl-address"><h3 class="gl-single-title">Arizona Office</h3><ul><li class="gl-address-location">Road 3, West side lane Texas, USA</li><li class="gl-address-phone">0632 0152 001</li><li class="gl-address-email">mail@gmail.com</li></ul></div><!-- END --></div></div>
+
 </div>
 </div>
 
