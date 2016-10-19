@@ -25,284 +25,116 @@
                     <h6>SUBMIT PROPERTY DETAILS</h6>
                   </div>
                 </div>
+                <%= form_for(company,id: "gl-bz-directory-form") do |f| %>
+
                 <div class="col-xs-12">
                   <div class="form-group">
-                    <input placeholder="Property Title..." class="form-control" type="text">
-                  </div>
+                      <%= f.text_field :name , class: "form-control" ,placeholder: "Property Title..."%>
+
+                 </div>
                 </div>
                 <div class="col-xs-12">
                   <div class="form-group">
-                    <textarea class="form-control" cols="12" rows="10">Description here...</textarea>
-                  </div>
+                   <%= f.text_area :about , class: "form-control" ,placeholder: "Description here..."%> </div>
                 </div>
                 <div class="col-md-6 col-xs-12">
+                <style>
+                .bootstrap-select{
+                height: 46px;
+background: #fff;
+}
+                </style>
                   <div class="form-group">
-                    <div class="btn-group bootstrap-select"><button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" title="Property Category..."><span class="filter-option pull-left">Property Category...</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button><div class="dropdown-menu open"><ul class="dropdown-menu inner" role="menu"><li data-original-index="0" class="selected"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Property Category...</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="1"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Category 1</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="2"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Category 2</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="3"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Category 3</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="4"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Category 4</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="5"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Category 5</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li></ul></div><select class="selectpicker" tabindex="-98">
-                      <option>Property Category...</option>
-                      <option>Category 1</option>
-                      <option>Category 2</option>
-                      <option>Category 3</option>
-                      <option>Category 4</option>
-                      <option>Category 5</option>
-                    </select></div>
+                   <%= f.collection_select(:region_id, Region.all, :id, :name, {:include_blank => "Please select"},{class:"btn-group bootstrap-select"}) %>
+
                   </div>
                 </div>
-                <div class="col-md-6 col-xs-12">
-                  <div class="form-group">
-                    <div class="btn-group bootstrap-select"><button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" title="Property Location..."><span class="filter-option pull-left">Property Location...</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button><div class="dropdown-menu open"><ul class="dropdown-menu inner" role="menu"><li data-original-index="0" class="selected"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Property Location...</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="1"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Category 1</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="2"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Category 2</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="3"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Category 3</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="4"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Category 4</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="5"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Category 5</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li></ul></div><select class="selectpicker" tabindex="-98">
-                      <option>Property Location...</option>
-                      <option>Category 1</option>
-                      <option>Category 2</option>
-                      <option>Category 3</option>
-                      <option>Category 4</option>
-                      <option>Category 5</option>
-                    </select></div>
-                  </div>
-                </div>
-                <div class="col-md-6 col-xs-12">
-                  <div class="form-group">
-                    <div class="btn-group bootstrap-select"><button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" title="Property Status..."><span class="filter-option pull-left">Property Status...</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button><div class="dropdown-menu open"><ul class="dropdown-menu inner" role="menu"><li data-original-index="0" class="selected"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Property Status...</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="1"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Category 1</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="2"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Category 2</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="3"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Category 3</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="4"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Category 4</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="5"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Category 5</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li></ul></div><select class="selectpicker" tabindex="-98">
-                      <option>Property Status...</option>
-                      <option>Category 1</option>
-                      <option>Category 2</option>
-                      <option>Category 3</option>
-                      <option>Category 4</option>
-                      <option>Category 5</option>
-                    </select></div>
-                  </div>
-                </div>
+                
                 <div class="col-md-6 col-xs-12 text-lg-right">
                   <div class="form-group">
-                    <input placeholder="Bedrooms..." class="form-control" type="text">
-                  </div>
+                                        <%= f.text_field :adress , class: "form-control" ,placeholder: "Adress..."%>
+
+                    </div>
                 </div>
                 <div class="col-md-6 col-xs-12">
                   <div class="form-group">
-                    <input placeholder="Bathrooms..." class="form-control" type="text">
-                  </div>
+                                        <%= f.text_field :floor , class: "form-control" ,placeholder: "Mertebe sayti..."%>
+
+                   </div>
                 </div>
                 <div class="col-md-6 col-xs-12">
                   <div class="form-group">
-                    <input placeholder="Garages..." class="form-control" type="text">
-                  </div>
+                                        <%= f.text_field :part , class: "form-control" ,placeholder: "Blok sayi..."%>
+
+                     </div>
                 </div>
                 <div class="col-md-6 col-xs-12">
                   <div class="form-group">
-                    <input placeholder="Sale or Rent Prices..." class="form-control" type="text">
-                  </div>
+                      <%= f.text_field :phone , class: "form-control" ,placeholder: "Phone..."%>
+</div>
+                </div>     <div class="col-md-6 col-xs-12">
+                  <div class="form-group">
+                      <%= f.text_field :price , class: "form-control" ,placeholder: "1 kv qiymeti..."%>
+</div>
                 </div>
                 <div class="col-md-6 col-xs-12">
                   <div class="form-group">
-                    <input placeholder="Price Postfix Text... " class="form-control" type="text">
-                  </div>
+                    <%= f.text_field :facebook , class: "form-control" ,placeholder: "Facebook..."%>
+</div>
                 </div>
                 <div class="col-md-6 col-xs-12">
                   <div class="form-group">
-                    <input placeholder="Area..." class="form-control" type="text">
-                  </div>
+                          <%= f.text_field :youtube , class: "form-control" ,placeholder: "Youtube..."%>
+</div>
                 </div>
                 <div class="col-md-6 col-xs-12">
                   <div class="form-group">
-                    <input placeholder="Area Postfix Text..." class="form-control" type="text">
-                  </div>
+                           <%= f.text_field :web_site , class: "form-control" ,placeholder: "Web site..."%>
+</div>
                 </div>
-                <div class="col-md-6 col-xs-12">
-                  <div class="form-group">
-                    <input placeholder="Property ID..." class="form-control" type="text">
-                  </div>
-                </div>
-                <div class="col-md-6 col-xs-12">
-                  <div class="form-group">
-                    <input placeholder="Video URL..." class="form-control" type="text">
-                  </div>
-                </div>
-                <div class="col-md-6 col-xs-12 margin-top-15 margin-bottom-15">
-                  <div class="form-group check">
-                    <input class="form-control" name="featured" id="featured" type="checkbox">
-                    <label for="featured">Mark this Property as Featured Property.</label>
-                  </div>
-                </div>
+             
                 <div class="col-xs-12">
                   <div class="form-submit-header secondary-bg-color m-b-0">
-                    <h6>PROPERTY FEATURES</h6>
+                    <h6>PROPERTY Image</h6>
                   </div>
                 </div>
                 <div class="col-xs-12">
                   <div class="features-checkbox">
-                    <div class="col-lg-3 col-md-4 col-xs-12">
-                      <div class="form-group check">
-                        <input class="form-control" name="shutters" id="shutters" type="checkbox">
-                        <label for="shutters">Hurricane Shutters</label>
-                      </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-xs-12">
-                      <div class="form-group check">
-                        <input class="form-control" name="busway" id="busway" type="checkbox">
-                        <label for="busway">Next to busway</label>
-                      </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-xs-12">
-                      <div class="form-group check">
-                        <input class="form-control" name="theater" id="theater" type="checkbox">
-                        <label for="theater">Home Theater</label>
-                      </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-xs-12">
-                      <div class="form-group check">
-                        <input class="form-control" name="heating" id="heating" type="checkbox">
-                        <label for="heating">Central Heating</label>
-                      </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-xs-12">
-                      <div class="form-group check">
-                        <input class="form-control" name="ceilings" id="ceilings" type="checkbox">
-                        <label for="ceilings">26' Ceilings</label>
-                      </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-xs-12">
-                      <div class="form-group check">
-                        <input class="form-control" name="stories" id="stories" type="checkbox">
-                        <label for="stories">2 Stories</label>
-                      </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-xs-12">
-                      <div class="form-group check">
-                        <input class="form-control" name="sinks" id="sinks" type="checkbox">
-                        <label for="sinks">Dual Sinks</label>
-                      </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-xs-12">
-                      <div class="form-group check">
-                        <input class="form-control" name="range" id="range" type="checkbox">
-                        <label for="range">Electric Range</label>
-                      </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-xs-12">
-                      <div class="form-group check">
-                        <input class="form-control" name="exit" id="exit" type="checkbox">
-                        <label for="exit">Emergency Exit</label>
-                      </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-xs-12">
-                      <div class="form-group check">
-                        <input class="form-control" name="alarm" id="alarm" type="checkbox">
-                        <label for="alarm">Fire Alarm</label>
-                      </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-xs-12">
-                      <div class="form-group check">
-                        <input class="form-control" name="fire" id="fire" type="checkbox">
-                        <label for="fire">Fire Place</label>
-                      </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-xs-12">
-                      <div class="form-group check">
-                        <input class="form-control" name="lawn" id="lawn" type="checkbox">
-                        <label for="lawn">Lawn</label>
-                      </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-xs-12">
-                      <div class="form-group check">
-                        <input class="form-control" name="laundry" id="laundry" type="checkbox">
-                        <label for="laundry">Laundry Room</label>
-                      </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-xs-12">
-                      <div class="form-group check">
-                        <input class="form-control" name="marble" id="marble" type="checkbox">
-                        <label for="marble">Marble Floors</label>
-                      </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-xs-12">
-                      <div class="form-group check">
-                        <input class="form-control" name="swimming" id="swimming" type="checkbox">
-                        <label for="swimming">Swimming Pool</label>
-                      </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-xs-12">
-                      <div class="form-group check">
-                        <input class="form-control" name="wifi" id="wifi" type="checkbox">
-                        <label for="wifi">Wifi</label>
-                      </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-xs-12">
-                      <div class="form-group check">
-                        <input class="form-control" name="connection" id="connection" type="checkbox">
-                        <label for="connection">Telephone Connection</label>
-                      </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-xs-12">
-                      <div class="form-group check">
-                        <input class="form-control" name="garden" id="garden" type="checkbox">
-                        <label for="garden">Green Garden</label>
-                      </div>
-                    </div>
+                         <div class="col-md-6 col-xs-12">
+                  <div class="form-group">
+                           <p >Slide</p>
+    <%= f.file_field :slide%>
+
+</div>
+                </div>
+                             <div class="col-md-6 col-xs-12">
+                  <div class="form-group">
+                           <p >Logo</p>
+    <%= f.file_field :logo%>
+
+</div>
+                </div>
+                          <div class="col-md-6 col-xs-12">
+                  <div class="form-group">
+                           <p >Slide</p>
+    <%= f.file_field :image%>
+
+</div>
+                </div>
+                   
                   </div>
                 </div>
-                <div class="col-xs-12">
-                  <div class="submit-map-holder secondary-bg-color margin-top-30  margin-bottom-30">
-                     
-                    <div id="submitMap" style="position: relative; overflow: hidden;"><div style="height: 100%; width: 100%; position: absolute; background-color: rgb(229, 227, 223);"><div style="position: absolute; left: 0px; top: 0px; overflow: hidden; width: 100%; height: 100%; z-index: 0;" class="gm-style"><div style="position: absolute; left: 0px; top: 0px; overflow: hidden; width: 100%; height: 100%; z-index: 0; cursor: url(&quot;https://maps.gstatic.com/mapfiles/openhand_8_8.cur&quot;), default;"><div style="position: absolute; left: 0px; top: 0px; z-index: 1; width: 100%;"><div style="position: absolute; left: 0px; top: 0px; z-index: 100; width: 100%;"><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"><div style="position: absolute; left: 0px; top: 0px; z-index: 1; visibility: inherit;" aria-hidden="true"><div style="width: 256px; height: 256px; position: absolute; left: 296px; top: -47px;"></div><div style="width: 256px; height: 256px; position: absolute; left: 296px; top: 209px;"></div><div style="width: 256px; height: 256px; position: absolute; left: 40px; top: -47px;"></div><div style="width: 256px; height: 256px; position: absolute; left: 40px; top: 209px;"></div><div style="width: 256px; height: 256px; position: absolute; left: 552px; top: -47px;"></div><div style="width: 256px; height: 256px; position: absolute; left: 552px; top: 209px;"></div><div style="width: 256px; height: 256px; position: absolute; left: -216px; top: -47px;"></div><div style="width: 256px; height: 256px; position: absolute; left: -216px; top: 209px;"></div><div style="width: 256px; height: 256px; position: absolute; left: 808px; top: -47px;"></div><div style="width: 256px; height: 256px; position: absolute; left: 808px; top: 209px;"></div></div></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 101; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 102; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 103; width: 100%;"><div style="position: absolute; left: 0px; top: 0px; z-index: -1;"><div style="position: absolute; left: 0px; top: 0px; z-index: 1; visibility: inherit;" aria-hidden="true"><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 296px; top: -47px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 296px; top: 209px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 40px; top: -47px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 40px; top: 209px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 552px; top: -47px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 552px; top: 209px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: -216px; top: -47px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: -216px; top: 209px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 808px; top: -47px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 808px; top: 209px;"></div></div></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"><div style="position: absolute; left: 0px; top: 0px; z-index: 1; visibility: inherit;" aria-hidden="true"><div style="position: absolute; left: 296px; top: -47px; transition: opacity 200ms ease-out 0s;"><img style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none;" src="https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i12!2i2046!3i1361!4i256!2m3!1e0!2sm!3i366040042!3m14!2sen-US!3sUS!5e18!12m1!1e47!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcy50OjV8cC5oOiNGRkJCMDB8cC5zOjQzLjQwMDAwMDAwMDAwMDAwNnxwLmw6MzcuNTk5OTk5OTk5OTk5OTk0fHAuZzoxLHMudDoyfHAuaDojMDBGRjZBfHAuczotMS4wOTg5MDEwOTg5MDExMjM0fHAubDoxMS4yMDAwMDAwMDAwMDAwMTd8cC5nOjEscy50OjQ5fHAuaDojRkZDMjAwfHAuczotNjEuOHxwLmw6NDUuNTk5OTk5OTk5OTk5OTk0fHAuZzoxLHMudDo1MHxwLmg6I0ZGMDMwMHxwLnM6LTEwMHxwLmw6NTEuMTk5OTk5OTk5OTk5OTl8cC5nOjEscy50OjUxfHAuaDojRkYwMzAwfHAuczotMTAwfHAubDo1MnxwLmc6MSxzLnQ6NnxwLmg6IzAwNzhGRnxwLnM6LTEzLjIwMDAwMDAwMDAwMDAwM3xwLmw6Mi40MDAwMDAwMDAwMDAwMDU3fHAuZzox!4e0&amp;token=108050" draggable="false" alt=""></div><div style="position: absolute; left: 40px; top: -47px; transition: opacity 200ms ease-out 0s;"><img style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none;" src="https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i12!2i2045!3i1361!4i256!2m3!1e0!2sm!3i366040042!3m14!2sen-US!3sUS!5e18!12m1!1e47!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcy50OjV8cC5oOiNGRkJCMDB8cC5zOjQzLjQwMDAwMDAwMDAwMDAwNnxwLmw6MzcuNTk5OTk5OTk5OTk5OTk0fHAuZzoxLHMudDoyfHAuaDojMDBGRjZBfHAuczotMS4wOTg5MDEwOTg5MDExMjM0fHAubDoxMS4yMDAwMDAwMDAwMDAwMTd8cC5nOjEscy50OjQ5fHAuaDojRkZDMjAwfHAuczotNjEuOHxwLmw6NDUuNTk5OTk5OTk5OTk5OTk0fHAuZzoxLHMudDo1MHxwLmg6I0ZGMDMwMHxwLnM6LTEwMHxwLmw6NTEuMTk5OTk5OTk5OTk5OTl8cC5nOjEscy50OjUxfHAuaDojRkYwMzAwfHAuczotMTAwfHAubDo1MnxwLmc6MSxzLnQ6NnxwLmg6IzAwNzhGRnxwLnM6LTEzLjIwMDAwMDAwMDAwMDAwM3xwLmw6Mi40MDAwMDAwMDAwMDAwMDU3fHAuZzox!4e0&amp;token=29138" draggable="false" alt=""></div><div style="position: absolute; left: 296px; top: 209px; transition: opacity 200ms ease-out 0s;"><img style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none;" src="https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i12!2i2046!3i1362!4i256!2m3!1e0!2sm!3i366040042!3m14!2sen-US!3sUS!5e18!12m1!1e47!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcy50OjV8cC5oOiNGRkJCMDB8cC5zOjQzLjQwMDAwMDAwMDAwMDAwNnxwLmw6MzcuNTk5OTk5OTk5OTk5OTk0fHAuZzoxLHMudDoyfHAuaDojMDBGRjZBfHAuczotMS4wOTg5MDEwOTg5MDExMjM0fHAubDoxMS4yMDAwMDAwMDAwMDAwMTd8cC5nOjEscy50OjQ5fHAuaDojRkZDMjAwfHAuczotNjEuOHxwLmw6NDUuNTk5OTk5OTk5OTk5OTk0fHAuZzoxLHMudDo1MHxwLmg6I0ZGMDMwMHxwLnM6LTEwMHxwLmw6NTEuMTk5OTk5OTk5OTk5OTl8cC5nOjEscy50OjUxfHAuaDojRkYwMzAwfHAuczotMTAwfHAubDo1MnxwLmc6MSxzLnQ6NnxwLmg6IzAwNzhGRnxwLnM6LTEzLjIwMDAwMDAwMDAwMDAwM3xwLmw6Mi40MDAwMDAwMDAwMDAwMDU3fHAuZzox!4e0&amp;token=110915" draggable="false" alt=""></div><div style="position: absolute; left: 552px; top: -47px; transition: opacity 200ms ease-out 0s;"><img style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none;" src="https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i12!2i2047!3i1361!4i256!2m3!1e0!2sm!3i366040042!3m14!2sen-US!3sUS!5e18!12m1!1e47!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcy50OjV8cC5oOiNGRkJCMDB8cC5zOjQzLjQwMDAwMDAwMDAwMDAwNnxwLmw6MzcuNTk5OTk5OTk5OTk5OTk0fHAuZzoxLHMudDoyfHAuaDojMDBGRjZBfHAuczotMS4wOTg5MDEwOTg5MDExMjM0fHAubDoxMS4yMDAwMDAwMDAwMDAwMTd8cC5nOjEscy50OjQ5fHAuaDojRkZDMjAwfHAuczotNjEuOHxwLmw6NDUuNTk5OTk5OTk5OTk5OTk0fHAuZzoxLHMudDo1MHxwLmg6I0ZGMDMwMHxwLnM6LTEwMHxwLmw6NTEuMTk5OTk5OTk5OTk5OTl8cC5nOjEscy50OjUxfHAuaDojRkYwMzAwfHAuczotMTAwfHAubDo1MnxwLmc6MSxzLnQ6NnxwLmg6IzAwNzhGRnxwLnM6LTEzLjIwMDAwMDAwMDAwMDAwM3xwLmw6Mi40MDAwMDAwMDAwMDAwMDU3fHAuZzox!4e0&amp;token=55891" draggable="false" alt=""></div><div style="position: absolute; left: 40px; top: 209px; transition: opacity 200ms ease-out 0s;"><img style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none;" src="https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i12!2i2045!3i1362!4i256!2m3!1e0!2sm!3i366040042!3m14!2sen-US!3sUS!5e18!12m1!1e47!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcy50OjV8cC5oOiNGRkJCMDB8cC5zOjQzLjQwMDAwMDAwMDAwMDAwNnxwLmw6MzcuNTk5OTk5OTk5OTk5OTk0fHAuZzoxLHMudDoyfHAuaDojMDBGRjZBfHAuczotMS4wOTg5MDEwOTg5MDExMjM0fHAubDoxMS4yMDAwMDAwMDAwMDAwMTd8cC5nOjEscy50OjQ5fHAuaDojRkZDMjAwfHAuczotNjEuOHxwLmw6NDUuNTk5OTk5OTk5OTk5OTk0fHAuZzoxLHMudDo1MHxwLmg6I0ZGMDMwMHxwLnM6LTEwMHxwLmw6NTEuMTk5OTk5OTk5OTk5OTl8cC5nOjEscy50OjUxfHAuaDojRkYwMzAwfHAuczotMTAwfHAubDo1MnxwLmc6MSxzLnQ6NnxwLmg6IzAwNzhGRnxwLnM6LTEzLjIwMDAwMDAwMDAwMDAwM3xwLmw6Mi40MDAwMDAwMDAwMDAwMDU3fHAuZzox!4e0&amp;token=32003" draggable="false" alt=""></div><div style="position: absolute; left: -216px; top: 209px; transition: opacity 200ms ease-out 0s;"><img style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none;" src="https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i12!2i2044!3i1362!4i256!2m3!1e0!2sm!3i366040090!3m14!2sen-US!3sUS!5e18!12m1!1e47!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcy50OjV8cC5oOiNGRkJCMDB8cC5zOjQzLjQwMDAwMDAwMDAwMDAwNnxwLmw6MzcuNTk5OTk5OTk5OTk5OTk0fHAuZzoxLHMudDoyfHAuaDojMDBGRjZBfHAuczotMS4wOTg5MDEwOTg5MDExMjM0fHAubDoxMS4yMDAwMDAwMDAwMDAwMTd8cC5nOjEscy50OjQ5fHAuaDojRkZDMjAwfHAuczotNjEuOHxwLmw6NDUuNTk5OTk5OTk5OTk5OTk0fHAuZzoxLHMudDo1MHxwLmg6I0ZGMDMwMHxwLnM6LTEwMHxwLmw6NTEuMTk5OTk5OTk5OTk5OTl8cC5nOjEscy50OjUxfHAuaDojRkYwMzAwfHAuczotMTAwfHAubDo1MnxwLmc6MSxzLnQ6NnxwLmg6IzAwNzhGRnxwLnM6LTEzLjIwMDAwMDAwMDAwMDAwM3xwLmw6Mi40MDAwMDAwMDAwMDAwMDU3fHAuZzox!4e0&amp;token=5077" draggable="false" alt=""></div><div style="position: absolute; left: -216px; top: -47px; transition: opacity 200ms ease-out 0s;"><img style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none;" src="https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i12!2i2044!3i1361!4i256!2m3!1e0!2sm!3i366039970!3m14!2sen-US!3sUS!5e18!12m1!1e47!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcy50OjV8cC5oOiNGRkJCMDB8cC5zOjQzLjQwMDAwMDAwMDAwMDAwNnxwLmw6MzcuNTk5OTk5OTk5OTk5OTk0fHAuZzoxLHMudDoyfHAuaDojMDBGRjZBfHAuczotMS4wOTg5MDEwOTg5MDExMjM0fHAubDoxMS4yMDAwMDAwMDAwMDAwMTd8cC5nOjEscy50OjQ5fHAuaDojRkZDMjAwfHAuczotNjEuOHxwLmw6NDUuNTk5OTk5OTk5OTk5OTk0fHAuZzoxLHMudDo1MHxwLmg6I0ZGMDMwMHxwLnM6LTEwMHxwLmw6NTEuMTk5OTk5OTk5OTk5OTl8cC5nOjEscy50OjUxfHAuaDojRkYwMzAwfHAuczotMTAwfHAubDo1MnxwLmc6MSxzLnQ6NnxwLmg6IzAwNzhGRnxwLnM6LTEzLjIwMDAwMDAwMDAwMDAwM3xwLmw6Mi40MDAwMDAwMDAwMDAwMDU3fHAuZzox!4e0&amp;token=55601" draggable="false" alt=""></div><div style="position: absolute; left: 552px; top: 209px; transition: opacity 200ms ease-out 0s;"><img style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none;" src="https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i12!2i2047!3i1362!4i256!2m3!1e0!2sm!3i366040042!3m14!2sen-US!3sUS!5e18!12m1!1e47!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcy50OjV8cC5oOiNGRkJCMDB8cC5zOjQzLjQwMDAwMDAwMDAwMDAwNnxwLmw6MzcuNTk5OTk5OTk5OTk5OTk0fHAuZzoxLHMudDoyfHAuaDojMDBGRjZBfHAuczotMS4wOTg5MDEwOTg5MDExMjM0fHAubDoxMS4yMDAwMDAwMDAwMDAwMTd8cC5nOjEscy50OjQ5fHAuaDojRkZDMjAwfHAuczotNjEuOHxwLmw6NDUuNTk5OTk5OTk5OTk5OTk0fHAuZzoxLHMudDo1MHxwLmg6I0ZGMDMwMHxwLnM6LTEwMHxwLmw6NTEuMTk5OTk5OTk5OTk5OTl8cC5nOjEscy50OjUxfHAuaDojRkYwMzAwfHAuczotMTAwfHAubDo1MnxwLmc6MSxzLnQ6NnxwLmg6IzAwNzhGRnxwLnM6LTEzLjIwMDAwMDAwMDAwMDAwM3xwLmw6Mi40MDAwMDAwMDAwMDAwMDU3fHAuZzox!4e0&amp;token=58756" draggable="false" alt=""></div><div style="position: absolute; left: 808px; top: 209px; transition: opacity 200ms ease-out 0s;"><img style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none;" src="https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i12!2i2048!3i1362!4i256!2m3!1e0!2sm!3i366040042!3m14!2sen-US!3sUS!5e18!12m1!1e47!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcy50OjV8cC5oOiNGRkJCMDB8cC5zOjQzLjQwMDAwMDAwMDAwMDAwNnxwLmw6MzcuNTk5OTk5OTk5OTk5OTk0fHAuZzoxLHMudDoyfHAuaDojMDBGRjZBfHAuczotMS4wOTg5MDEwOTg5MDExMjM0fHAubDoxMS4yMDAwMDAwMDAwMDAwMTd8cC5nOjEscy50OjQ5fHAuaDojRkZDMjAwfHAuczotNjEuOHxwLmw6NDUuNTk5OTk5OTk5OTk5OTk0fHAuZzoxLHMudDo1MHxwLmg6I0ZGMDMwMHxwLnM6LTEwMHxwLmw6NTEuMTk5OTk5OTk5OTk5OTl8cC5nOjEscy50OjUxfHAuaDojRkYwMzAwfHAuczotMTAwfHAubDo1MnxwLmc6MSxzLnQ6NnxwLmg6IzAwNzhGRnxwLnM6LTEzLjIwMDAwMDAwMDAwMDAwM3xwLmw6Mi40MDAwMDAwMDAwMDAwMDU3fHAuZzox!4e0&amp;token=6597" draggable="false" alt=""></div><div style="position: absolute; left: 808px; top: -47px; transition: opacity 200ms ease-out 0s;"><img style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none;" src="https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i12!2i2048!3i1361!4i256!2m3!1e0!2sm!3i366040042!3m14!2sen-US!3sUS!5e18!12m1!1e47!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcy50OjV8cC5oOiNGRkJCMDB8cC5zOjQzLjQwMDAwMDAwMDAwMDAwNnxwLmw6MzcuNTk5OTk5OTk5OTk5OTk0fHAuZzoxLHMudDoyfHAuaDojMDBGRjZBfHAuczotMS4wOTg5MDEwOTg5MDExMjM0fHAubDoxMS4yMDAwMDAwMDAwMDAwMTd8cC5nOjEscy50OjQ5fHAuaDojRkZDMjAwfHAuczotNjEuOHxwLmw6NDUuNTk5OTk5OTk5OTk5OTk0fHAuZzoxLHMudDo1MHxwLmg6I0ZGMDMwMHxwLnM6LTEwMHxwLmw6NTEuMTk5OTk5OTk5OTk5OTl8cC5nOjEscy50OjUxfHAuaDojRkYwMzAwfHAuczotMTAwfHAubDo1MnxwLmc6MSxzLnQ6NnxwLmg6IzAwNzhGRnxwLnM6LTEzLjIwMDAwMDAwMDAwMDAwM3xwLmw6Mi40MDAwMDAwMDAwMDAwMDU3fHAuZzox!4e0&amp;token=3732" draggable="false" alt=""></div></div></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 2; width: 100%; height: 100%; transition-duration: 0.3s; opacity: 0; display: none;" class="gm-style-pbc"><p class="gm-style-pbt">Use two fingers to move the map</p></div><div style="position: absolute; left: 0px; top: 0px; z-index: 3; width: 100%; height: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 4; width: 100%;"><div style="position: absolute; left: 0px; top: 0px; z-index: 104; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 105; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 106; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 107; width: 100%;"></div></div></div><div style="margin-left: 5px; margin-right: 5px; z-index: 1000000; position: absolute; left: 0px; bottom: 0px;"><a style="position: static; overflow: visible; float: none; display: inline;" target="_blank" href="https://maps.google.com/maps?ll=51.508493,-0.128147&amp;z=12&amp;t=m&amp;hl=en-US&amp;gl=US&amp;mapclient=apiv3" title="Click to see this area on Google Maps"><div style="width: 66px; height: 26px; cursor: pointer;"><img style="position: absolute; left: 0px; top: 0px; width: 66px; height: 26px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px;" src="https://maps.gstatic.com/mapfiles/api-3/images/google_white5.png" draggable="false"></div></a></div><div style="background-color: white; padding: 15px 21px; border: 1px solid rgb(171, 171, 171); font-family: Roboto,Arial,sans-serif; color: rgb(34, 34, 34); box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.2); z-index: 10000002; display: none; width: 256px; height: 148px; position: absolute; left: 285px; top: 120px;"><div style="padding: 0px 0px 10px; font-size: 16px;">Map Data</div><div style="font-size: 13px;">Map data ©2016 Google</div><div style="width: 13px; height: 13px; overflow: hidden; position: absolute; opacity: 0.7; right: 12px; top: 12px; z-index: 10000; cursor: pointer;"><img style="position: absolute; left: -2px; top: -336px; width: 59px; height: 492px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none;" src="https://maps.gstatic.com/mapfiles/api-3/images/mapcnt6.png" draggable="false"></div></div><div class="gmnoprint" style="z-index: 1000001; position: absolute; right: 161px; bottom: 0px; width: 121px;"><div draggable="false" style="-moz-user-select: none; height: 14px; line-height: 14px;" class="gm-style-cc"><div style="opacity: 0.7; width: 100%; height: 100%; position: absolute;"><div style="width: 1px;"></div><div style="background-color: rgb(245, 245, 245); width: auto; height: 100%; margin-left: 1px;"></div></div><div style="position: relative; padding-right: 6px; padding-left: 6px; font-family: Roboto,Arial,sans-serif; font-size: 10px; color: rgb(68, 68, 68); white-space: nowrap; direction: ltr; text-align: right; vertical-align: middle; display: inline-block;"><a style="color: rgb(68, 68, 68); text-decoration: none; cursor: pointer; display: none;">Map Data</a><span style="">Map data ©2016 Google</span></div></div></div><div class="gmnoscreen" style="position: absolute; right: 0px; bottom: 0px;"><div style="font-family: Roboto,Arial,sans-serif; font-size: 11px; color: rgb(68, 68, 68); direction: ltr; text-align: right; background-color: rgb(245, 245, 245);">Map data ©2016 Google</div></div><div class="gmnoprint gm-style-cc" style="z-index: 1000001; -moz-user-select: none; height: 14px; line-height: 14px; position: absolute; right: 92px; bottom: 0px;" draggable="false"><div style="opacity: 0.7; width: 100%; height: 100%; position: absolute;"><div style="width: 1px;"></div><div style="background-color: rgb(245, 245, 245); width: auto; height: 100%; margin-left: 1px;"></div></div><div style="position: relative; padding-right: 6px; padding-left: 6px; font-family: Roboto,Arial,sans-serif; font-size: 10px; color: rgb(68, 68, 68); white-space: nowrap; direction: ltr; text-align: right; vertical-align: middle; display: inline-block;"><a style="text-decoration: none; cursor: pointer; color: rgb(68, 68, 68);" href="https://www.google.com/intl/en-US_US/help/terms_maps.html" target="_blank">Terms of Use</a></div></div><div style="width: 25px; height: 25px; overflow: hidden; display: none; margin: 10px 14px; position: absolute; top: 0px; right: 0px;"><img style="position: absolute; left: -52px; top: -86px; width: 164px; height: 175px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px;" src="https://maps.gstatic.com/mapfiles/api-3/images/sv9.png" draggable="false" class="gm-fullscreen-control"></div><input id="pac-input" class="controls" placeholder="Search Box" autocomplete="off" style="z-index: 0; position: absolute; left: 116px; top: 0px;" type="text"><div draggable="false" style="-moz-user-select: none; height: 14px; line-height: 14px; position: absolute; right: 0px; bottom: 0px;" class="gm-style-cc"><div style="opacity: 0.7; width: 100%; height: 100%; position: absolute;"><div style="width: 1px;"></div><div style="background-color: rgb(245, 245, 245); width: auto; height: 100%; margin-left: 1px;"></div></div><div style="position: relative; padding-right: 6px; padding-left: 6px; font-family: Roboto,Arial,sans-serif; font-size: 10px; color: rgb(68, 68, 68); white-space: nowrap; direction: ltr; text-align: right; vertical-align: middle; display: inline-block;"><a target="_new" title="Report errors in the road map or imagery to Google" style="font-family: Roboto,Arial,sans-serif; font-size: 10px; color: rgb(68, 68, 68); text-decoration: none; position: relative;" href="https://www.google.com/maps/@51.508493,-0.128147,12z/data=!10m1!1e1!12b1?source=apiv3&amp;rapsrc=apiv3">Report a map error</a></div></div><div class="gmnoprint gm-bundled-control gm-bundled-control-on-bottom" style="margin: 10px; -moz-user-select: none; position: absolute; bottom: 107px; right: 28px;" draggable="false" controlwidth="28" controlheight="93"><div class="gmnoprint" style="position: absolute; left: 0px; top: 38px;" controlwidth="28" controlheight="55"><div draggable="false" style="-moz-user-select: none; box-shadow: 0px 1px 4px -1px rgba(0, 0, 0, 0.3); border-radius: 2px; cursor: pointer; background-color: rgb(255, 255, 255); width: 28px; height: 55px;"><div title="Zoom in" style="position: relative; width: 28px; height: 27px; left: 0px; top: 0px;"><div style="overflow: hidden; position: absolute; width: 15px; height: 15px; left: 7px; top: 6px;"><img style="position: absolute; left: 0px; top: 0px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none; width: 120px; height: 54px;" src="https://maps.gstatic.com/mapfiles/api-3/images/tmapctrl.png" draggable="false"></div></div><div style="position: relative; overflow: hidden; width: 67%; height: 1px; left: 16%; background-color: rgb(230, 230, 230); top: 0px;"></div><div title="Zoom out" style="position: relative; width: 28px; height: 27px; left: 0px; top: 0px;"><div style="overflow: hidden; position: absolute; width: 15px; height: 15px; left: 7px; top: 6px;"><img style="position: absolute; left: 0px; top: -15px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none; width: 120px; height: 54px;" src="https://maps.gstatic.com/mapfiles/api-3/images/tmapctrl.png" draggable="false"></div></div></div></div><div class="gm-svpc" style="background-color: rgb(255, 255, 255); box-shadow: 0px 1px 4px -1px rgba(0, 0, 0, 0.3); border-radius: 2px; width: 28px; height: 28px; cursor: url(&quot;https://maps.gstatic.com/mapfiles/openhand_8_8.cur&quot;), default; position: absolute; left: 0px; top: 0px;" controlwidth="28" controlheight="28"><div style="position: absolute; left: 1px; top: 1px;"></div><div style="position: absolute; left: 1px; top: 1px;"><div style="width: 26px; height: 26px; overflow: hidden; position: absolute; left: 0px; top: 0px;" aria-label="Street View Pegman Control"><img style="position: absolute; left: -147px; top: -26px; width: 215px; height: 835px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none;" src="https://maps.gstatic.com/mapfiles/api-3/images/cb_scout5.png" draggable="false"></div><div style="width: 26px; height: 26px; overflow: hidden; position: absolute; left: 0px; top: 0px; visibility: hidden;" aria-label="Pegman is on top of the Map"><img style="position: absolute; left: -147px; top: -52px; width: 215px; height: 835px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none;" src="https://maps.gstatic.com/mapfiles/api-3/images/cb_scout5.png" draggable="false"></div><div style="width: 26px; height: 26px; overflow: hidden; position: absolute; left: 0px; top: 0px; visibility: hidden;" aria-label="Street View Pegman Control"><img style="position: absolute; left: -147px; top: -78px; width: 215px; height: 835px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none;" src="https://maps.gstatic.com/mapfiles/api-3/images/cb_scout5.png" draggable="false"></div></div></div><div class="gmnoprint" controlwidth="28" controlheight="0" style="display: none; position: absolute;"><div style="width: 28px; height: 28px; overflow: hidden; position: absolute; border-radius: 2px; box-shadow: 0px 1px 4px -1px rgba(0, 0, 0, 0.3); cursor: pointer; background-color: rgb(255, 255, 255); display: none;" title="Rotate map 90 degrees"><img style="position: absolute; left: -141px; top: 6px; width: 170px; height: 54px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none;" src="https://maps.gstatic.com/mapfiles/api-3/images/tmapctrl4.png" draggable="false"></div><div style="width: 28px; height: 28px; overflow: hidden; position: absolute; border-radius: 2px; box-shadow: 0px 1px 4px -1px rgba(0, 0, 0, 0.3); top: 0px; cursor: pointer; background-color: rgb(255, 255, 255);" class="gm-tilt"><img style="position: absolute; left: -141px; top: -13px; width: 170px; height: 54px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none;" src="https://maps.gstatic.com/mapfiles/api-3/images/tmapctrl4.png" draggable="false"></div></div></div><div class="gmnoprint" style="margin: 10px; z-index: 0; position: absolute; cursor: pointer; left: 0px; top: 0px;"><div style="float: left;" class="gm-style-mtc"><div style="direction: ltr; overflow: hidden; text-align: center; position: relative; color: rgb(0, 0, 0); font-family: Roboto,Arial,sans-serif; -moz-user-select: none; font-size: 11px; background-color: rgb(255, 255, 255); padding: 8px; border-bottom-left-radius: 2px; border-top-left-radius: 2px; background-clip: padding-box; box-shadow: 0px 1px 4px -1px rgba(0, 0, 0, 0.3); min-width: 21px; font-weight: 500;" draggable="false" title="Show street map">Map</div><div style="background-color: white; z-index: -1; padding: 2px; border-bottom-left-radius: 2px; border-bottom-right-radius: 2px; box-shadow: 0px 1px 4px -1px rgba(0, 0, 0, 0.3); position: absolute; left: 0px; top: 33px; text-align: left; display: none;"><div style="color: rgb(0, 0, 0); font-family: Roboto,Arial,sans-serif; -moz-user-select: none; font-size: 11px; background-color: rgb(255, 255, 255); padding: 6px 8px 6px 6px; direction: ltr; text-align: left; white-space: nowrap;" draggable="false" title="Show street map with terrain"><span role="checkbox" style="box-sizing: border-box; position: relative; line-height: 0; font-size: 0px; margin: 0px 5px 0px 0px; display: inline-block; background-color: rgb(255, 255, 255); border: 1px solid rgb(198, 198, 198); border-radius: 1px; width: 13px; height: 13px; vertical-align: middle;"><div style="position: absolute; left: 1px; top: -2px; width: 13px; height: 11px; overflow: hidden; display: none;"><img style="position: absolute; left: -52px; top: -44px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none; width: 68px; height: 67px;" src="https://maps.gstatic.com/mapfiles/mv/imgs8.png" draggable="false"></div></span><label style="vertical-align: middle; cursor: pointer;">Terrain</label></div></div></div><div style="float: left;" class="gm-style-mtc"><div style="direction: ltr; overflow: hidden; text-align: center; position: relative; color: rgb(86, 86, 86); font-family: Roboto,Arial,sans-serif; -moz-user-select: none; font-size: 11px; background-color: rgb(255, 255, 255); padding: 8px; border-bottom-right-radius: 2px; border-top-right-radius: 2px; background-clip: padding-box; box-shadow: 0px 1px 4px -1px rgba(0, 0, 0, 0.3); border-left: 0px none; min-width: 37px;" draggable="false" title="Show satellite imagery">Satellite</div><div style="background-color: white; z-index: -1; padding: 2px; border-bottom-left-radius: 2px; border-bottom-right-radius: 2px; box-shadow: 0px 1px 4px -1px rgba(0, 0, 0, 0.3); position: absolute; right: 0px; top: 33px; text-align: left; display: none;"><div style="color: rgb(0, 0, 0); font-family: Roboto,Arial,sans-serif; -moz-user-select: none; font-size: 11px; background-color: rgb(255, 255, 255); padding: 6px 8px 6px 6px; direction: ltr; text-align: left; white-space: nowrap;" draggable="false" title="Show imagery with street names"><span role="checkbox" style="box-sizing: border-box; position: relative; line-height: 0; font-size: 0px; margin: 0px 5px 0px 0px; display: inline-block; background-color: rgb(255, 255, 255); border: 1px solid rgb(198, 198, 198); border-radius: 1px; width: 13px; height: 13px; vertical-align: middle;"><div style="position: absolute; left: 1px; top: -2px; width: 13px; height: 11px; overflow: hidden;"><img style="position: absolute; left: -52px; top: -44px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none; width: 68px; height: 67px;" src="https://maps.gstatic.com/mapfiles/mv/imgs8.png" draggable="false"></div></span><label style="vertical-align: middle; cursor: pointer;">Labels</label></div></div></div></div></div></div></div>
-                  </div>
-                </div>
-                <div class="col-xs-12">
-                  <div class="form-submit-header secondary-bg-color">
-                    <h6>add property images</h6>
-                  </div>
-                </div>
-                <div class="col-xs-12">
-                  <div class="jfiler-holder">
-                     <div class="jFiler jFiler-theme-dragdropbox"><input name="files[]" id="filer_input2" multiple="multiple" style="position: absolute; left: -9999px; top: -9999px; z-index: -9999;" type="file"><div class="jFiler-input-dragDrop"><div class="jFiler-input-inner"><div class="jFiler-input-text"><h4>Drag &amp; Drop IMAGE here</h4> <span style="display:inline-block; margin: 15px 0">or</span></div><a class="jFiler-input-choose-btn">Browse IMAGE</a></div></div></div>
-                     <div class="form-group">
-                      <p><strong>Note:</strong> Morbi accumsan ipsum velit nam nec tellus a odio tincidunt auctor a ornare odio sed non  mauris vitae erat consequat auctor dolor elit class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos.</p>
-                     </div>
-                  </div>
-                </div>
-                <div class="col-xs-12 margin-top-60">
-                  <div class="form-submit-header secondary-bg-color">
-                    <h6>WHAT TO DISPLAY IN AGENT INFORMATION BOX </h6>
-                  </div>
-                </div>
-                <div class="col-xs-12">
-                  <div class="padding-30">
-                    <div class="col-xs-12">
-                      <div class="form-group check">
-                        <input class="form-control" name="none" id="none" type="checkbox">
-                        <label for="none">None  <span>( Information Box will not show )</span></label>
-                      </div>
-                    </div>
-                    <div class="col-xs-12">
-                      <div class="form-group check">
-                        <input class="form-control" name="notshow" id="notshow" type="checkbox">
-                        <label for="notshow">My profile Information  <span>( Information Box will not show )</span></label>
-                      </div>
-                    </div>
-                    <div class="col-md-4">
-                      <div class="form-group check">
-                        <input class="form-control" name="agentinfo" id="agentinfo" type="checkbox">
-                        <label for="agentinfo">Display an agent’s Infromation</label>
-                      </div>
-                    </div>
-                    <div class="col-md-4 margin-bottom-15">
-                      <div class="form-group">
-                        <div class="btn-group bootstrap-select"><button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" title="Micheal Doe"><span class="filter-option pull-left">Micheal Doe</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button><div class="dropdown-menu open"><ul class="dropdown-menu inner" role="menu"><li data-original-index="0" class="selected"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Micheal Doe</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="1"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Sarah Doe</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="2"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">John Doe</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="3"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">David Doe</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li></ul></div><select class="selectpicker" tabindex="-98">
-                          <option>Micheal Doe</option>
-                          <option>Sarah Doe</option>
-                          <option>John Doe</option>
-                          <option>David Doe</option>
-                        </select></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                
+                  
+               
+              
+                
+             
                 <div class="col-xs-12">
                   <div class="form-group">
-                    <textarea class="form-control" cols="12" rows="10">Message to reviewer....</textarea>
-                  </div>
-                </div>
-                <div class="col-xs-12">
-                  <div class="form-group">
-                    <input value="SUBMIT MESSAGE" class="loadermore-btn rel-btn-radius btn-primary-ef-5 pull-lg-left" type="submit">
+
+    <%= f.submit 'Send',:class => 'loadermore-btn rel-btn-radius btn-primary-ef-5 pull-lg-left' %>
+
                   </div>
                 </div>
               </form>
@@ -321,30 +153,9 @@
                   </div><!--../s-widget-content-->
                   <div class="sw-userinfo text-xs-center">
                     <ul class="rel-ls-none p-info">
-                      <li>
-                        <span class="cnt-list-icons">
-                          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 414.937 414.937" style="enable-background:new 0 0 414.937 414.937;" xml:space="preserve"><g><path d="M159.138,256.452c37.217,36.944,80.295,72.236,97.207,55.195c24.215-24.392,39.12-45.614,92.854-2.761   c53.734,42.874,12.696,71.727-10.757,95.363c-27.064,27.269-128.432,1.911-228.909-97.804C9.062,206.71-17.07,105.54,10.014,78.258   c23.46-23.637,52.006-64.879,95.254-11.458c43.269,53.394,22.161,68.462-2.054,92.861   C86.31,176.695,121.915,219.501,159.138,256.452z M213.104,80.203c0,0-11.227-1.754-19.088,6.113   c-8.092,8.092-8.445,22.032,0.082,30.552c5.039,5.039,12.145,6.113,12.145,6.113c13.852,2.598,34.728,6.997,56.944,29.206   c22.209,22.208,26.608,43.084,29.206,56.943c0,0,1.074,7.106,6.113,12.145c8.521,8.521,22.46,8.174,30.552,0.082   c7.861-7.86,6.113-19.087,6.113-19.087c-4.399-28.057-17.999-57.365-41.351-80.716C270.462,98.203,241.153,84.609,213.104,80.203z    M318.415,96.958c40.719,40.719,58.079,86.932,52.428,124.379c0,0-1.972,11.859,5.773,19.604   c8.718,8.718,22.535,8.215,30.695,0.062c5.243-5.243,6.385-13.777,6.385-13.777c4.672-32.361-1.203-97.464-64.647-160.901   C285.605,2.887,220.509-2.988,188.147,1.677c0,0-8.527,1.136-13.777,6.385c-8.16,8.16-8.656,21.978,0.061,30.695   c7.746,7.746,19.604,5.773,19.604,5.773C231.484,38.879,277.696,56.24,318.415,96.958z" fill="#888888"></path></g></svg>
-                        </span>
-                        <span class="cnt-list-des">
-                          <a href="tel:+715552542259" target="_blank">+71 449  777 8800</a>
-                        </span>
-                      </li>
-                      <li>
-                        <span class="cnt-list-icons">
-                          <svg xml:space="preserve" style="enable-background:new 0 0 469.2 469.2;" viewBox="0 0 469.2 469.2" y="0px" x="0px" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g><path fill="#888888" d="M22.202,77.023C25.888,75.657,29.832,74.8,34,74.8h401.2c4.168,0,8.112,0.857,11.798,2.224L267.24,246.364   c-18.299,17.251-46.975,17.251-65.28,0L22.202,77.023z M464.188,377.944c3.114-5.135,5.012-11.098,5.012-17.544V108.8   c0-4.569-0.932-8.915-2.57-12.899L298.411,254.367L464.188,377.944z M283.2,268.464c-13.961,11.961-31.253,18.027-48.6,18.027   c-17.347,0-34.64-6.06-48.6-18.027L20.692,391.687c4.094,1.741,8.582,2.714,13.308,2.714h401.2c4.726,0,9.214-0.973,13.308-2.714   L283.2,268.464z M2.571,95.9C0.932,99.885,0,104.23,0,108.8V360.4c0,6.446,1.897,12.409,5.012,17.544l165.777-123.577L2.571,95.9z"></path></g></svg>
-                        </span>
-                        <span class="cnt-list-des">
-                          <a href="mailto:Info@example.com">MichealDoe@example.com</a>
-                        </span>
-                      </li>
-                      <li>
-                        <span class="cnt-list-icons">
-                          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 31.416 31.416" style="enable-background:new 0 0 31.416 31.416;" xml:space="preserve"><g><path d="M28.755,6.968l-0.47,0.149L25.782,7.34l-0.707,1.129l-0.513-0.163L22.57,6.51l-0.289-0.934L21.894,4.58l-1.252-1.123    l-1.477-0.289l-0.034,0.676l1.447,1.412l0.708,0.834L20.49,6.506l-0.648-0.191L18.871,5.91l0.033-0.783l-1.274-0.524l-0.423,1.841    l-1.284,0.291l0.127,1.027l1.673,0.322l0.289-1.641l1.381,0.204l0.642,0.376h1.03l0.705,1.412l1.869,1.896l-0.137,0.737    l-1.507-0.192l-2.604,1.315l-1.875,2.249l-0.244,0.996h-0.673l-1.254-0.578l-1.218,0.578l0.303,1.285l0.53-0.611l0.932-0.029    l-0.065,1.154l0.772,0.226l0.771,0.866l1.259-0.354l1.438,0.227l1.67,0.449l0.834,0.098l1.414,1.605l2.729,1.605l-1.765,3.372    l-1.863,0.866l-0.707,1.927l-2.696,1.8l-0.287,1.038c6.892-1.66,12.019-7.851,12.019-15.253    C31.413,12.474,30.433,9.465,28.755,6.968z" fill="#888888"></path><path d="M17.515,23.917l-1.144-2.121l1.05-2.188l-1.05-0.314l-1.179-1.184l-2.612-0.586l-0.867-1.814v1.077h-0.382l-2.251-3.052    v-2.507L7.43,8.545L4.81,9.012H3.045L2.157,8.43L3.29,7.532L2.16,7.793c-1.362,2.326-2.156,5.025-2.156,7.916    c0,8.673,7.031,15.707,15.705,15.707c0.668,0,1.323-0.059,1.971-0.137l-0.164-1.903c0,0,0.721-2.826,0.721-2.922    C18.236,26.357,17.515,23.917,17.515,23.917z" fill="#888888"></path><path d="M5.84,5.065l2.79-0.389l1.286-0.705l1.447,0.417l2.312-0.128l0.792-1.245l1.155,0.19l2.805-0.263L19.2,2.09l1.09-0.728    l1.542,0.232l0.562-0.085C20.363,0.553,18.103,0,15.708,0C10.833,0,6.474,2.222,3.596,5.711h0.008L5.84,5.065z M16.372,1.562    l1.604-0.883l1.03,0.595l-1.491,1.135l-1.424,0.143l-0.641-0.416L16.372,1.562z M11.621,1.691l0.708,0.295l0.927-0.295    l0.505,0.875l-2.14,0.562l-1.029-0.602C10.591,2.526,11.598,1.878,11.621,1.691z" fill="#888888"></path></g></svg>
-                        </span>
-                        <span class="cnt-list-des">
-                          <a href="http://michealwebsite.com" target="_blank">Michealwebsite.com</a>
-                        </span>
-                      </li>
+            
+                 
+              
                     </ul>
                   </div>
                 </div><!--..s-widget-box-->
@@ -372,91 +183,7 @@
                     </ul>
                   </div><!--../s-widget-content-->
                 </div><!--..s-widget-box-->
-                <div class="s-widget-box widget-related-posts">
-                  <div class="s-widget-tit text-xs-center">
-                    <h6>RELATED PROPERTIES</h6>
-                  </div><!--../s-widget-tit-->
-                  <div class="s-widget-content">
-                    <ul class="rel-ls-none clearfix margin-top-30">
-                      <li>
-                        <div class="listing-grid-box listing-grid-9">
-                          <div class="grid-box-holder">
-                            <div class="grid-box-thumb">
-                              <a href="#">
-                                <img src="assets/img/listings/grid-img13.jpg" alt="grid-img" class="img-fluid">
-                              </a>
-                              <span class="grid-status for-sale">SALE</span>
-                              <div class="grid-price-holder">
-                                <span class="grid-price">$15,000</span>
-                              </div><!-- ../grid-price-holder-->
-                            </div><!--../grid-box-thumb-->
-                            <div class="grid-box-content text-lg-left">
-                              <h4><a href="#">Roux larg flat in ca 247</a></h4>
-                              <ul class="list-amenities rel-ls-none rel-ls-inline">
-                                <li>
-                                  <span class="am-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 61.168 61.168" style="enable-background:new 0 0 61.168 61.168;" xml:space="preserve"><path d="M50.216,37.584h-7.161l3.047-4.4c5.755-7.671,4.922-20.28-1.781-26.982c-3.621-3.622-8.437-5.617-13.56-5.617  c-5.122,0-9.938,1.995-13.56,5.617c-6.703,6.702-7.536,19.312-1.804,26.952l3.068,4.431h-7.513L0,60.584h61.168L50.216,37.584z   M30.938,12.584c3.859,0,7,3.141,7,7s-3.141,7-7,7s-7-3.141-7-7S27.078,12.584,30.938,12.584z M12.216,39.584h7.634l10.911,15.757  l10.91-15.757h7.281l9.048,19H3.168L12.216,39.584z" fill="#333333"></path></svg>
-                                  </span>
-                                  300 ft
-                                </li>
-                                <li>
-                                  <span class="am-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve"><g><path d="M471,330v82h41V289H41V121c0-5.336-2-10.169-6-14.5c-4-4.333-8.833-6.5-14.5-6.5     S10,102.167,6,106.5s-6,9.167-6,14.5v291h41v-82H471z" fill="#333333"></path><path d="M105.5,205c10.333,0,19.333-3.667,27-11c7.667-7.334,11.5-16.168,11.5-26.5     c0-10.335-3.833-19.168-11.5-26.5c-7.667-7.333-16.667-11-27-11s-19.167,3.667-26.5,11s-11,16.167-11,26.5s3.667,19.167,11,26.5     C86.333,201.333,95.167,205,105.5,205z" fill="#333333"></path><path d="M512,258v-50c0-8-2.833-14.5-8.5-19.5c-5.67-5-12.837-8.167-21.5-9.5l-297-29h-2     c-5.333,0-9.833,1.833-13.5,5.5s-5.5,8.167-5.5,13.5v58H88c-12.667,0-19,5.167-19,15.5S75.333,258,88,258H512z" fill="#333333"></path></g></svg>
-                                  </span>
-                                  3
-                                </li>
-                                <li>
-                                  <span class="am-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 583.312 583.312" style="enable-background:new 0 0 583.312 583.312;" xml:space="preserve"><g><path d="M125.25,545.507c25.694-5.097,43.28-28.305,53.292-52.259h-13.588c-5.795,0-11.532-0.115-17.203-0.373    c-5.89,12.049-14.831,22.472-28.181,24.557c-4.121-3.566-9.419-5.795-15.3-5.795c-12.977,0-23.495,10.519-23.495,23.495    s10.519,23.495,23.495,23.495C113.507,558.627,121.415,553.253,125.25,545.507z" fill="#333333"></path><path d="M491.685,558.627c12.977,0,23.495-10.519,23.495-23.495s-10.519-23.495-23.495-23.495c-5.183,0-9.936,1.73-13.817,4.58    c-11.398-3.796-19.584-13.808-25.274-24.958c-8.701,1.511-16.438,1.989-22.242,1.989h-1.539h-0.89h-7.793    c8.204,22.52,23.39,44.389,49.982,51.159C473.707,552.765,482.008,558.627,491.685,558.627z" fill="#333333"></path><path d="M453.215,110.146l-48.023-48.032c-8.816,2.247-35.85,19.68-43.93,28.114l63.906,63.906    C433.545,146.12,450.795,119.354,453.215,110.146z" fill="#333333"></path><path d="M361.979,128.133c1.225,0,2.448-0.469,3.386-1.396l6.761-6.761c0.43-0.43,0.727-0.927,0.956-1.444    c0.784-1.759,0.478-3.873-0.956-5.316c-1.435-1.444-3.558-1.741-5.317-0.957c-0.516,0.229-1.014,0.536-1.443,0.957l-6.771,6.751    c-1.864,1.865-1.864,4.896,0,6.761C359.531,127.664,360.755,128.133,361.979,128.133z" fill="#333333"></path><path d="M341.688,148.415c1.224,0,2.447-0.468,3.385-1.396l6.761-6.761c1.864-1.865,1.864-4.896,0-6.761s-4.896-1.865-6.761,0    l-6.761,6.761c-1.864,1.865-1.864,4.896,0,6.761C339.249,147.956,340.463,148.415,341.688,148.415z" fill="#333333"></path><path d="M321.405,168.707c1.224,0,2.448-0.469,3.385-1.396l6.761-6.76c1.865-1.865,1.865-4.896,0-6.761    c-1.864-1.865-4.896-1.865-6.761,0l-6.761,6.761c-1.864,1.864-1.864,4.896,0,6.76    C318.957,168.238,320.182,168.707,321.405,168.707z" fill="#333333"></path><path d="M386.593,132.044c0.784-1.76,0.487-3.883-0.956-5.317c-1.444-1.444-3.558-1.741-5.317-0.957    c-0.516,0.229-1.013,0.536-1.443,0.957l-6.761,6.77c-1.865,1.865-1.865,4.896,0,6.761c0.938,0.938,2.161,1.396,3.385,1.396    c1.225,0,2.448-0.469,3.386-1.396l6.761-6.77C386.066,133.067,386.363,132.57,386.593,132.044z" fill="#333333"></path><path d="M365.354,147.019c-1.864-1.865-4.896-1.865-6.761,0l-6.761,6.761c-1.864,1.865-1.864,4.896,0,6.761    c0.938,0.937,2.161,1.396,3.385,1.396c1.225,0,2.448-0.468,3.386-1.396l6.761-6.761    C367.219,151.915,367.219,148.883,365.354,147.019z" fill="#333333"></path><path d="M345.072,167.301c-1.864-1.865-4.896-1.865-6.761,0l-6.761,6.77c-1.864,1.865-1.864,4.896,0,6.761    c0.938,0.937,2.161,1.396,3.386,1.396c1.224,0,2.447-0.468,3.385-1.396l6.761-6.77    C346.938,172.197,346.938,169.166,345.072,167.301z" fill="#333333"></path><path d="M389.021,155.175c1.225,0,2.448-0.468,3.385-1.396l6.761-6.761c0.431-0.43,0.728-0.928,0.957-1.444    c0.784-1.759,0.478-3.873-0.957-5.317c-1.434-1.444-3.557-1.74-5.316-0.956c-0.517,0.229-1.023,0.535-1.444,0.956l-6.76,6.761    c-1.865,1.865-1.865,4.896,0,6.761C386.573,154.716,387.798,155.175,389.021,155.175z" fill="#333333"></path><path d="M368.739,175.467c1.225,0,2.448-0.468,3.386-1.396l6.761-6.761c1.864-1.865,1.864-4.896,0-6.76    c-1.865-1.865-4.896-1.865-6.761,0l-6.761,6.76c-1.865,1.865-1.865,4.896,0,6.761    C366.292,174.999,367.516,175.467,368.739,175.467z" fill="#333333"></path><path d="M348.448,195.749c1.224,0,2.447-0.468,3.385-1.396l6.761-6.761c1.864-1.865,1.864-4.896,0-6.761s-4.896-1.865-6.761,0    l-6.761,6.761c-1.864,1.865-1.864,4.896,0,6.761C346.01,195.281,347.233,195.749,348.448,195.749z" fill="#333333"></path><path d="M564.188,254.186h-14.344H535.5V34.248c0-5.278-4.274-9.562-9.562-9.562h-41.539c-2.4,0-4.715,0.899-6.483,2.524    l-34.368,31.643c-7.812-1.979-16.725,0.688-22.224,2.926l32.838,32.847c2.372-6.12,4.571-14.478,2.706-22.032l31.27-28.783h28.238    v210.375H33.469H19.125C8.559,254.186,0,262.744,0,273.311v19.125c0,10.566,8.559,19.125,19.125,19.125h2.132h4.208h5.556    c1.454,7.401,3.328,15.912,5.7,25.723l13.387,64.146c18.733,69.328,56.667,80.583,101.621,82.037    c4.351,0.134,8.75,0.22,13.225,0.22h17.222l234.845,0.01c-0.01-0.048-0.019-0.086-0.038-0.134c0.01,0.038,0.02,0.086,0.038,0.124    h13.33c5.422,0,11.638-0.344,18.303-1.329l0,0c29.405-4.332,67.598-21.104,85.441-75.879l21.754-94.917h5.661h2.678    c0.517,0,0.994-0.115,1.501-0.153c9.85-0.774,17.624-8.922,17.624-18.972v-19.125    C583.312,262.744,574.754,254.186,564.188,254.186z M411.762,454.013L411.762,454.013c0,0.058,0.009,0.125,0.019,0.182    C411.771,454.138,411.762,454.07,411.762,454.013z" fill="#333333"></path></g></svg>
-                                  </span>
-                                  4
-                                </li>
-                              </ul>
-                            </div><!--../grid-box-content-->
-                          </div><!-- ../grid-box-holder -->
-                        </div><!-- ../listing-grid-box -->
-                      </li>
-                      <li>
-                        <div class="listing-grid-box listing-grid-9">
-                          <div class="grid-box-holder">
-                            <div class="grid-box-thumb">
-                              <a href="#">
-                                <img src="assets/img/listings/grid-img13.jpg" alt="grid-img" class="img-fluid">
-                              </a>
-                              <span class="grid-status for-sale">SALE</span>
-                              <div class="grid-price-holder">
-                                <span class="grid-price">$15,000</span>
-                              </div><!-- ../grid-price-holder-->
-                            </div><!--../grid-box-thumb-->
-                            <div class="grid-box-content text-lg-left">
-                              <h4><a href="#">Roux larg flat in ca 247</a></h4>
-                              <ul class="list-amenities rel-ls-none rel-ls-inline">
-                                <li>
-                                  <span class="am-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 61.168 61.168" style="enable-background:new 0 0 61.168 61.168;" xml:space="preserve"><path d="M50.216,37.584h-7.161l3.047-4.4c5.755-7.671,4.922-20.28-1.781-26.982c-3.621-3.622-8.437-5.617-13.56-5.617  c-5.122,0-9.938,1.995-13.56,5.617c-6.703,6.702-7.536,19.312-1.804,26.952l3.068,4.431h-7.513L0,60.584h61.168L50.216,37.584z   M30.938,12.584c3.859,0,7,3.141,7,7s-3.141,7-7,7s-7-3.141-7-7S27.078,12.584,30.938,12.584z M12.216,39.584h7.634l10.911,15.757  l10.91-15.757h7.281l9.048,19H3.168L12.216,39.584z" fill="#333333"></path></svg>
-                                  </span>
-                                  300 ft
-                                </li>
-                                <li>
-                                  <span class="am-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve"><g><path d="M471,330v82h41V289H41V121c0-5.336-2-10.169-6-14.5c-4-4.333-8.833-6.5-14.5-6.5     S10,102.167,6,106.5s-6,9.167-6,14.5v291h41v-82H471z" fill="#333333"></path><path d="M105.5,205c10.333,0,19.333-3.667,27-11c7.667-7.334,11.5-16.168,11.5-26.5     c0-10.335-3.833-19.168-11.5-26.5c-7.667-7.333-16.667-11-27-11s-19.167,3.667-26.5,11s-11,16.167-11,26.5s3.667,19.167,11,26.5     C86.333,201.333,95.167,205,105.5,205z" fill="#333333"></path><path d="M512,258v-50c0-8-2.833-14.5-8.5-19.5c-5.67-5-12.837-8.167-21.5-9.5l-297-29h-2     c-5.333,0-9.833,1.833-13.5,5.5s-5.5,8.167-5.5,13.5v58H88c-12.667,0-19,5.167-19,15.5S75.333,258,88,258H512z" fill="#333333"></path></g></svg>
-                                  </span>
-                                  3
-                                </li>
-                                <li>
-                                  <span class="am-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 583.312 583.312" style="enable-background:new 0 0 583.312 583.312;" xml:space="preserve"><g><path d="M125.25,545.507c25.694-5.097,43.28-28.305,53.292-52.259h-13.588c-5.795,0-11.532-0.115-17.203-0.373    c-5.89,12.049-14.831,22.472-28.181,24.557c-4.121-3.566-9.419-5.795-15.3-5.795c-12.977,0-23.495,10.519-23.495,23.495    s10.519,23.495,23.495,23.495C113.507,558.627,121.415,553.253,125.25,545.507z" fill="#333333"></path><path d="M491.685,558.627c12.977,0,23.495-10.519,23.495-23.495s-10.519-23.495-23.495-23.495c-5.183,0-9.936,1.73-13.817,4.58    c-11.398-3.796-19.584-13.808-25.274-24.958c-8.701,1.511-16.438,1.989-22.242,1.989h-1.539h-0.89h-7.793    c8.204,22.52,23.39,44.389,49.982,51.159C473.707,552.765,482.008,558.627,491.685,558.627z" fill="#333333"></path><path d="M453.215,110.146l-48.023-48.032c-8.816,2.247-35.85,19.68-43.93,28.114l63.906,63.906    C433.545,146.12,450.795,119.354,453.215,110.146z" fill="#333333"></path><path d="M361.979,128.133c1.225,0,2.448-0.469,3.386-1.396l6.761-6.761c0.43-0.43,0.727-0.927,0.956-1.444    c0.784-1.759,0.478-3.873-0.956-5.316c-1.435-1.444-3.558-1.741-5.317-0.957c-0.516,0.229-1.014,0.536-1.443,0.957l-6.771,6.751    c-1.864,1.865-1.864,4.896,0,6.761C359.531,127.664,360.755,128.133,361.979,128.133z" fill="#333333"></path><path d="M341.688,148.415c1.224,0,2.447-0.468,3.385-1.396l6.761-6.761c1.864-1.865,1.864-4.896,0-6.761s-4.896-1.865-6.761,0    l-6.761,6.761c-1.864,1.865-1.864,4.896,0,6.761C339.249,147.956,340.463,148.415,341.688,148.415z" fill="#333333"></path><path d="M321.405,168.707c1.224,0,2.448-0.469,3.385-1.396l6.761-6.76c1.865-1.865,1.865-4.896,0-6.761    c-1.864-1.865-4.896-1.865-6.761,0l-6.761,6.761c-1.864,1.864-1.864,4.896,0,6.76    C318.957,168.238,320.182,168.707,321.405,168.707z" fill="#333333"></path><path d="M386.593,132.044c0.784-1.76,0.487-3.883-0.956-5.317c-1.444-1.444-3.558-1.741-5.317-0.957    c-0.516,0.229-1.013,0.536-1.443,0.957l-6.761,6.77c-1.865,1.865-1.865,4.896,0,6.761c0.938,0.938,2.161,1.396,3.385,1.396    c1.225,0,2.448-0.469,3.386-1.396l6.761-6.77C386.066,133.067,386.363,132.57,386.593,132.044z" fill="#333333"></path><path d="M365.354,147.019c-1.864-1.865-4.896-1.865-6.761,0l-6.761,6.761c-1.864,1.865-1.864,4.896,0,6.761    c0.938,0.937,2.161,1.396,3.385,1.396c1.225,0,2.448-0.468,3.386-1.396l6.761-6.761    C367.219,151.915,367.219,148.883,365.354,147.019z" fill="#333333"></path><path d="M345.072,167.301c-1.864-1.865-4.896-1.865-6.761,0l-6.761,6.77c-1.864,1.865-1.864,4.896,0,6.761    c0.938,0.937,2.161,1.396,3.386,1.396c1.224,0,2.447-0.468,3.385-1.396l6.761-6.77    C346.938,172.197,346.938,169.166,345.072,167.301z" fill="#333333"></path><path d="M389.021,155.175c1.225,0,2.448-0.468,3.385-1.396l6.761-6.761c0.431-0.43,0.728-0.928,0.957-1.444    c0.784-1.759,0.478-3.873-0.957-5.317c-1.434-1.444-3.557-1.74-5.316-0.956c-0.517,0.229-1.023,0.535-1.444,0.956l-6.76,6.761    c-1.865,1.865-1.865,4.896,0,6.761C386.573,154.716,387.798,155.175,389.021,155.175z" fill="#333333"></path><path d="M368.739,175.467c1.225,0,2.448-0.468,3.386-1.396l6.761-6.761c1.864-1.865,1.864-4.896,0-6.76    c-1.865-1.865-4.896-1.865-6.761,0l-6.761,6.76c-1.865,1.865-1.865,4.896,0,6.761    C366.292,174.999,367.516,175.467,368.739,175.467z" fill="#333333"></path><path d="M348.448,195.749c1.224,0,2.447-0.468,3.385-1.396l6.761-6.761c1.864-1.865,1.864-4.896,0-6.761s-4.896-1.865-6.761,0    l-6.761,6.761c-1.864,1.865-1.864,4.896,0,6.761C346.01,195.281,347.233,195.749,348.448,195.749z" fill="#333333"></path><path d="M564.188,254.186h-14.344H535.5V34.248c0-5.278-4.274-9.562-9.562-9.562h-41.539c-2.4,0-4.715,0.899-6.483,2.524    l-34.368,31.643c-7.812-1.979-16.725,0.688-22.224,2.926l32.838,32.847c2.372-6.12,4.571-14.478,2.706-22.032l31.27-28.783h28.238    v210.375H33.469H19.125C8.559,254.186,0,262.744,0,273.311v19.125c0,10.566,8.559,19.125,19.125,19.125h2.132h4.208h5.556    c1.454,7.401,3.328,15.912,5.7,25.723l13.387,64.146c18.733,69.328,56.667,80.583,101.621,82.037    c4.351,0.134,8.75,0.22,13.225,0.22h17.222l234.845,0.01c-0.01-0.048-0.019-0.086-0.038-0.134c0.01,0.038,0.02,0.086,0.038,0.124    h13.33c5.422,0,11.638-0.344,18.303-1.329l0,0c29.405-4.332,67.598-21.104,85.441-75.879l21.754-94.917h5.661h2.678    c0.517,0,0.994-0.115,1.501-0.153c9.85-0.774,17.624-8.922,17.624-18.972v-19.125    C583.312,262.744,574.754,254.186,564.188,254.186z M411.762,454.013L411.762,454.013c0,0.058,0.009,0.125,0.019,0.182    C411.771,454.138,411.762,454.07,411.762,454.013z" fill="#333333"></path></g></svg>
-                                  </span>
-                                  4
-                                </li>
-                              </ul>
-                            </div><!--../grid-box-content-->
-                          </div><!-- ../grid-box-holder -->
-                        </div><!-- ../listing-grid-box -->
-                      </li>
-                    </ul>
-                  </div><!--../s-widget-content-->
-                </div><!--..s-widget-box-->
+               
                 <div class="s-widget-box widget-banner">
                   <img src="assets/img/banners/wt-banner.jpg" alt="img" class="img-fluid">
                 </div><!--..s-widget-box-->
@@ -467,128 +194,4 @@
       </div>
       <!--================================../BLOG FULLWIDTH================================-->
     </main>
-
-<section class="gl-about-page-header-wrapper" style="padding: 120px 0;"><div class="container"><div class="row"><h1 class="gl-page-title">Home</h1></div></div></section>
-<section class="gl-page-content-section" style="background-color: rgb(233, 233, 233);">
-<div class="container">
-<div class="row">
-<%= form_for(company,id: "gl-bz-directory-form") do |f| %>
-<fieldset>
-
-  <% if company.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(company.errors.count, "error") %> prohibited this company from being saved:</h2>
-
-      <ul>
-      <% company.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field col-md-6" id="form_s">
-  <p>Sirketin adi</p>
-    <%= f.text_field :name , class: "gl-input" ,placeholder: "Sirketin adi"%>
-  </div>
-<div class="field col-md-6" id="form_s">
-    <p>1kv ucun orta qiymet</p>
-
-    <%= f.text_area :price , class: "gl-input" ,placeholder: "1kv qiymeti"%>
-  </div>
-
-  <div class="field col-md-12" id="form_s">
-    <p>Sirketin Haqqinda</p>
-
-    <%= f.text_area :about , class: "gl-input" ,placeholder: "Haqqinda"%>
-  </div>
-  
-  <div class="field col-md-6" id="photo">
-  <p >Slide</p>
-    <%= f.file_field :slide%>
-  </div>
-
-  <div class="field col-md-6" id="photo">
-    <p>Logo</p>
-
-    <%= f.file_field :logo %>
-  </div>
-
- <div class="file col-md-12" id="photo">
-   <p>Photo</p>
-
-    <%= f.file_field :image %>
-  </div>
-
-
-
-  <div class="field col-md-6" id="form_s" style="margin-top:10px;">
-    <p>Binanin unvani</p>
-
-    <%= f.text_field :adress , class: "gl-input" ,placeholder: "Unvan"%>
-  </div>
-    <div class="field col-md-6"  id="form_s" style="margin-top:10px;">
-
- <p>Kategoriyani secin</p>
-<style>
-.select2-container--default{
-  height: 48px;
-padding: 15px;
-background: #fff;
-}
-</style>
-<div class="gl-jobs-category gl-category-dropdown">
-
-    <%= f.collection_select(:region_id, Region.all, :id, :name, {:include_blank => "Please select"},{class:"gl-category-dropdown-selection select2-hidden-accessible"}) %>
-
-
-<span style="width: 118px;" dir="ltr"  class="select2 select2-container select2-container--tt" style="">
-
-<span class="dropdown-wrapper" aria-hidden="true"></span></span></div>
-</div>
-  <div class="field col-md-6" id="form_s">
-    <p>Telefon nomresi</p>
-
-    <%= f.text_field :phone , class: "gl-input" ,placeholder: "Telefon"%>
-  </div>
-
-  <div class="field col-md-6" id="form_s">
-    <p>Facebook</p>
-
-    <%= f.text_field :facebook , class: "gl-input" ,placeholder: "Facebook"%>
-  </div>
-
-  <div class="field col-md-6" id="form_s">
-    <p>Youtube</p>
-
-    <%= f.text_field :youtube , class: "gl-input" ,placeholder: "Youtube"%>
-  </div>
-
-  <div class="field col-md-6" id="form_s">
-    <p>Web sayt</p>
-
-    <%= f.text_field :web_site , class: "gl-input" ,placeholder: "Web Site"%>
-  </div>
-
-  <div class="field col-md-6" id="form_s">
-    <p>Mertebelerin sayi</p>
-
-    <%= f.number_field :floor , class: "gl-input" ,placeholder: "Mertebelerin sayi"%>
-  </div>
-
-  <div class="field col-md-6" id="form_s">
-    <p>Bloklarin sayi</p>
-
-    <%= f.number_field :part , class: "gl-input" ,placeholder: "Bloklarin sayi"%>
-  </div>
-</fieldset>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>
-
-</div>
-</div>
-
-</section>
