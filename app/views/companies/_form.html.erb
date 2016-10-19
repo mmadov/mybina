@@ -29,15 +29,20 @@
   <div class="field">
     <%= f.text_area :price , class: "gl-input" ,placeholder: "1kv qiymeti"%>
   </div>
-  <div class="field">
+  <div class="field" id="photo">
+  <p >Slide</p>
     <%= f.file_field :slide%>
   </div>
 
-  <div class="field">
+  <div class="field" id="photo">
+    <p>Logo</p>
+
     <%= f.file_field :logo %>
   </div>
 
- <div class="file">
+ <div class="file" id="photo">
+   <p>Photo</p>
+
     <%= f.file_field :image %>
   </div>
     <div class="field">
