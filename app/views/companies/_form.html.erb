@@ -43,12 +43,19 @@
     <div class="field">
 </div>
 
+<style>
+.select2-container--default{
+  height: 48px;
+padding: 15px;
+background: #fff;
+}
+</style>
 <div class="gl-jobs-category gl-category-dropdown">
 
     <%= f.collection_select(:region_id, Region.all, :id, :name, {:include_blank => "Please select"},{class:"gl-category-dropdown-selection select2-hidden-accessible"}) %>
 
 
-<span style="width: 118px;" dir="ltr"  class="select2 select2-container select2-container--default" style="">
+<span style="width: 118px;" dir="ltr"  class="select2 select2-container select2-container--tt" style="">
 
 <span class="dropdown-wrapper" aria-hidden="true"></span></span></div>
 
