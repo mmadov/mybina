@@ -19,13 +19,12 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-9 col-xs-12">
-              <form class="row form-setting" action="assets/lib/jfiler/php/upload.php" method="post" enctype="multipart/form-data">
-                <div class="col-xs-12">
+                <%= form_for(company,class: "row form-setting") do |f| %>     <div class="col-xs-12">
                   <div class="form-submit-header secondary-bg-color">
                     <h6>SUBMIT PROPERTY DETAILS</h6>
                   </div>
                 </div>
-                <%= form_for(company,id: "gl-bz-directory-form") do |f| %>
+              
 
                 <div class="col-xs-12">
                   <div class="form-group">
