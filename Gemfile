@@ -24,9 +24,7 @@ gem 'owlcarousel-rails'
 gem 'bootstrap-sass' 
 gem 'mini_magick'
 gem 'cloudinary'
-gem 'nested_form_fields'
 gem 'remotipart', '~> 1.2'
-gem 'searchkick'
 
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
@@ -39,6 +37,8 @@ gem 'dropzonejs-rails'
 gem 'rails_admin'
 gem 'devise'
 gem "nested_form"
+gem 'nested_form_fields'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password

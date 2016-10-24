@@ -10,12 +10,19 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+
+//= require_tree .
 //= require jquery
 //= require jquery_ujs
 //= require dropzone
+//= require bootstrap
 //= require jquery_nested_form
 //= require nested_form_fields
 //= require owl.carousel
 
 //= require turbolinks
-//= require_tree .
+function add_fields(link, association, content) {
+var new_id = new Date().getTime();
+var regexp = new RegExp("new_" + association, "g");
+$(link).parent().before(content.replace(regexp, new_id));
+}

@@ -19,7 +19,7 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-9 col-xs-12">
-                <%= form_for(company,class: "row form-setting") do |f| %>     <div class="col-xs-12">
+                <%= form_for(@company, :html => { :multipart => true }) do |f| %>     <div class="col-xs-12">
                   <div class="form-submit-header secondary-bg-color">
                     <h6>SUBMIT PROPERTY DETAILS</h6>
                   </div>
@@ -113,20 +113,41 @@ background: #fff;
 
 </div>
                 </div>
-                          <div class="col-md-6 col-xs-12">
+  
+                            <div class="col-md-6 col-xs-12">
                   <div class="form-group">
-                           <p >Slide</p>
+                           <p >Logo</p>
     <%= f.file_field :image%>
 
 </div>
                 </div>
                    
                   </div>
+
+                </div>
+                <div class="col-xs-12">
+                  <div class="form-submit-header secondary-bg-color m-b-0">
+                    <h6>PROPERTY Image</h6>
+                  </div>
+                </div>
+                <div class="col-xs-12">
+                  <div class="features-checkbox">
+                 <div class="col-md-6 col-xs-12">
+                  <div class="form-group">
+  <%= f.fields_for :company_attachments do |questions_for_form| %>
+    <%= render 'company_attachment_fields', f: questions_for_form %>
+  <% end %>
+  <%= link_to_add_fields "Add Question", f, :company_attachments %>
+
+                </div>
+                   
+                  </div>
+                  
+
                 </div>
                 
                   
-               
-              
+               </div>
                 
              
                 <div class="col-xs-12">

@@ -23,6 +23,8 @@ end
   # GET /companies/new
   def new
     @company = Company.new
+       @company_attachment = @company.company_attachments.build
+
   end
 
   # GET /companies/1/edit
@@ -37,12 +39,13 @@ end
    @company.region_id = params[:region_id]
     respond_to do |format|
       if @company.save
-        format.html { redirect_to @company, notice: 'Company was successfully created.' }
-        format.json { render :show, status: :created, location: @company }
-      else
-        format.html { render :new }
-        format.json { render json: @company.errors, status: :unprocessable_entity }
-      end
+       params[:company_attachments]['image'].each do |a|
+          @company_attachment = @company.company_attachments.create!(:image => a)
+       end
+       format.html { redirect_to @company, notice: 'Post was successfully created.' }
+     else
+       format.html { render action: 'new' }
+     end
     end
   end
 
@@ -78,6 +81,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def company_params
-      params.require(:company).permit(:name, :about, :slide, :logo, :image, :adress, :user_id,:price, :phone, :facebook, :youtube, :web_site, :floor, :region_id, :part)
+      params.require(:company).permit(:name, :about, :slide, :logo, :image, :adress, :user_id,:price, :phone, :facebook, :youtube, :web_site, :floor, :region_id, :part,company_attachments_attributes:[:image,:_destroy,:id])
     end
 end
