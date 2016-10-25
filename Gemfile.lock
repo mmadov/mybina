@@ -39,11 +39,11 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     arel (7.1.4)
-    autoprefixer-rails (6.5.0.2)
+    autoprefixer-rails (6.5.1.1)
       execjs
     aws_cf_signer (0.1.3)
     bcrypt (3.1.11)
-    bootstrap (4.0.0.alpha4)
+    bootstrap (4.0.0.alpha5)
       autoprefixer-rails (>= 6.0.3)
       sass (>= 3.4.19)
     bootstrap-sass (3.3.7)
@@ -64,6 +64,7 @@ GEM
       rest-client
     cocaine (0.5.8)
       climate_control (>= 0.0.3, < 1.0)
+    cocoon (1.2.9)
     coffee-rails (4.2.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.2.x)
@@ -86,7 +87,7 @@ GEM
     erubis (2.7.0)
     execjs (2.7.0)
     ffi (1.9.14)
-    font-awesome-rails (4.6.3.1)
+    font-awesome-rails (4.7.0.0)
       railties (>= 3.2, < 5.1)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
@@ -128,7 +129,7 @@ GEM
     mini_portile2 (2.1.0)
     minitest (5.9.1)
     multi_json (1.12.1)
-    mysql2 (0.4.4)
+    mysql2 (0.4.5)
     nested_form (0.3.2)
     nested_form_fields (0.8)
       coffee-rails (>= 3.2.1)
@@ -197,7 +198,7 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (11.3.0)
-    rb-fsevent (0.9.7)
+    rb-fsevent (0.9.8)
     rb-inotify (0.9.7)
       ffi (>= 0.5.0)
     remotipart (1.3.1)
@@ -234,7 +235,7 @@ GEM
     turbolinks-source (5.0.0)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
-    uglifier (3.0.2)
+    uglifier (3.0.3)
       execjs (>= 0.3.0, < 3)
     unf (0.1.4)
       unf_ext
@@ -259,6 +260,7 @@ DEPENDENCIES
   byebug
   carrierwave
   cloudinary
+  cocoon
   coffee-rails (~> 4.2)
   devise
   dropzonejs-rails

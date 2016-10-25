@@ -38,7 +38,7 @@ gem 'rails_admin'
 gem 'devise'
 gem "nested_form"
 gem 'nested_form_fields'
-
+gem "cocoon"
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password

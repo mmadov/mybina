@@ -11,7 +11,6 @@
 // about supported directives.
 //
 
-//= require_tree .
 //= require jquery
 //= require jquery_ujs
 //= require dropzone
@@ -19,5 +18,6 @@
 //= require jquery_nested_form
 //= require nested_form_fields
 //= require owl.carousel
-
+//= require cocoon
 //= require turbolinks
+//= require_tree .
