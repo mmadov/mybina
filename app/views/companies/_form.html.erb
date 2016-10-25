@@ -134,11 +134,11 @@ background: #fff;
                   <div class="features-checkbox">
                  <div class="col-md-6 col-xs-12">
                   <div class="form-group">
-  <%= f.fields_for :company_attachments do |questions_for_form| %>
-    <%= render 'company_attachment_fields', f: questions_for_form %>
-  <% end %>
-  <%= link_to_add_fields "Add Question", f, :company_attachments %>
+                 <%= f.nested_fields_for :company_attachments do |ff| %>
+      <%= ff.file_field :image%>
 
+  <% end %>
+<%= f.add_nested_fields_link :company_attachments %>
                 </div>
                    
                   </div>

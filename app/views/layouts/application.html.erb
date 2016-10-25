@@ -5,6 +5,10 @@
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
   <title>Myapp</title>
 
+  <%= csrf_meta_tags %>
+  <%= javascript_include_tag "application" %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application',media: 'all',  'data-turbolinks-track': 'reload' %>
 
   <%= javascript_include_tag :defaults, "nested_form" %>
   <link rel="stylesheet" href="http://sites.redqteam.com/glimpse/jobs/css/A.jobs.style.css.pagespeed.cf.buc1dvkpsN.css">
@@ -36,10 +40,6 @@
    <%= stylesheet_link_tag    'http://yandex.st/bootstrap/3.1.1/css/bootstrap.min.css', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'http://yandex.st/bootstrap/3.1.1/js/bootstrap.min.js', 'data-turbolinks-track' => true %>
  
-  <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
  <%= yield(:css) %>
 
 <style type="text/css">
@@ -116,28 +116,11 @@ text-transform: uppercase;
 <%= yield(:javascript) %><!-- We put our JavaScript tags here -->
   </body>
   <script type="text/javascript">
-  	$(".owl-carousel").owlCarousel({
-  		      autoPlay: 3000, //Set AutoPlay to 3 seconds
- 
-      items : 4,
-      itemsDesktop : [1199,3],
-      itemsDesktopSmall : [979,3]
-  	});
-$(document).ready(function(){
-  // disable auto discover
-  Dropzone.autoDiscover = false;
-
-  // grap our upload form by its id
-  $("#new_upload").dropzone({
-    // restrict image size to a maximum 1MB
-    maxFilesize: 1,
-    // changed the passed param to one accepted by
-    // our rails app
-    paramName: "upload[image]",
-    // show remove links on each image upload
-    addRemoveLinks: true
-  }); 
-});
+ function add_fields(link, association, content) {
+var new_id = new Date().getTime();
+var regexp = new RegExp("new_" + association, "g");
+$(link).parent().before(content.replace(regexp, new_id));
+}
   </script>
   <section class="gl-cta-section"><div class="container"><div class="row"><div class="gl-cta-content-wrapper"><p>Stay connected &amp; book the best table</p><form action="#" class="gl-newsletter-form"><input name="gl-newsletter-email" id="gl-newsletter-email" placeholder="Email" type="email"><div class="gl-realestate-location gl-location-dropdown"><select aria-hidden="true" tabindex="-1" class="gl-location-selection select2-hidden-accessible"><option>&nbsp;</option><option value="canada">Canada</option><option value="itally">Itally</option><option value="london">London</option></select><span style="width: 84px;" dir="ltr" class="select2 select2-container select2-container--default"><span class="selection"><span aria-labelledby="select2-mq8o-container" tabindex="0" class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false"><span id="select2-mq8o-container" class="select2-selection__rendered"><span class="select2-selection__placeholder">Canada</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span></div><input value="Submit" class="gl-btn" type="submit"></form></div></div></div></section>
 
@@ -146,17 +129,5 @@ $(document).ready(function(){
   <script src="http://sites.redqteam.com/glimpse/js/main.js.pagespeed.ce.J7mHjWwHOv.js"></script>
   <script src="http://sites.redqteam.com/glimpse/js/plugins.js.pagespeed.ce.YH4ilp0kzm.js"></script>
   <script src="http://sites.redqteam.com/glimpse/js/scripts.js.pagespeed.ce.QAVzN4Pttq.js"></script>
-  <script type="text/javascript" src="assets/js/jquery.min.js"></script>
-  <script type="text/javascript" src="assets/js/tether.min.js"></script>
-  <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="assets/js/modernizr.custom.js"></script>
-  <script type="text/javascript" src="assets/js/jquery.easing.min.js"></script>
-  <script type="text/javascript" src="assets/libs/bootstrap-select/js/bootstrap-select.min.js"></script>
-  <script type="text/javascript" src="assets/js/masonry.pkgd.min.js"></script>
-  <script type="text/javascript" src="assets/js/jquery.countdown.min.js"></script>
-  <script type="text/javascript" src="assets/js/jquery-ui.js"></script>
-  <script type="text/javascript" src="assets/libs/isotope/jquery.isotope.min.js"></script>
-  <script type="text/javascript" src="assets/libs/isotope/animated-masonry-gallery.js"></script>
-  <script type="text/javascript" src="assets/libs/jfiler/js/jquery.filer.min.js?v=1.0.5"></script>
-  <script type="text/javascript" src="assets/libs/jfiler/js/custom.js?v=1.0.5"></script>
+  
 </html>
