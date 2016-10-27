@@ -18,7 +18,6 @@ gem 'nested_scaffold'
 gem 'bootstrap', '~> 4.0.0.alpha4'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
-gem 'jquery-fileupload-rails'  
 gem 'carrierwave'
 gem 'owlcarousel-rails'
 gem 'bootstrap-sass' 
@@ -34,8 +33,9 @@ gem 'mysql2'
 gem "paperclip"
 gem "mini_magick"
 gem 'dropzonejs-rails'
-gem 'rails_admin'
 gem 'devise'
+gem 'rails_admin', '~> 1.0'
+gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 gem "nested_form"
 gem 'nested_form_fields'
 gem "cocoon"

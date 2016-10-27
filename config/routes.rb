@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :companies
-  mount RailsAdmin::Engine => '/admpanel', as: 'rails_admin'
   resources :company_attachments
   resources :rooms
   resources :post_attachments
@@ -18,7 +18,6 @@ post 'uploadfiles'=>'product#upload'
     end
   resources :regions
   post 'companies/new'
-  resources :media_contents, only: [:create]
   devise_for :users
   get 'persons/profile'
 get 'search', to: 'search#index'
