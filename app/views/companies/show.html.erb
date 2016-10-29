@@ -19,15 +19,15 @@
     <div class="row">
       <!-- PAGE CONTENT DETAILS -->
         <!-- GALLERY -->
-        <div class="gl-profile-gallery">
-          <ul class="gl-gallery">
-          <div class="owl-carousel">
+        <div class="gl-profile-gallerys">
+          <ul class="gl-gallerys">
+          <div class="owl-carousel" id="owl-carousel">
                     <% @image.each do |image| %>
-              <li style="width:100%;height:155px">
+              <li style="width:100%;">
                 <a href="<%= image.image %>" class="gl-lightbox-img">
                     <picture>
                         <source media="(min-width: 768px)" srcset=<%= image.image %>>
-                        <img alt="Category Image" srcset=<%= image.image %> width="100%" height="155px">
+                        <img alt="Category Image" srcset=<%= image.image %> width="100%">
                     </picture>
                 </a>
               </li>
@@ -46,31 +46,7 @@
         </div>
         <!-- END -->
 
-        <!-- PROPERTY FEATURE -->
-        <div class="gl-page-contents-wrapper gl-property-feature-wrapper appear fadeIn" data-wow-duration="1s" data-wow-delay=".3s">
-          <h3 class="gl-content-title">Property Feature</h3>
-
-          <div class="gl-property-features">
-            <ul>
-              <li><i class="ion-checkmark"></i>Balcony</li>
-              <li><i class="ion-checkmark"></i>Balcony</li>
-              <li><i class="ion-checkmark"></i>Balcony</li>
-              <li><i class="ion-checkmark"></i>Garage</li>
-              <li><i class="ion-checkmark"></i>Garage</li>
-              <li><i class="ion-checkmark"></i>Garage</li>
-              <li><i class="ion-checkmark"></i>Wooden floor</li>
-              <li><i class="ion-checkmark"></i>Wooden floor</li>
-              <li><i class="ion-checkmark"></i>Wooden floor</li>
-              <li><i class="ion-checkmark"></i>Daining room</li>
-              <li><i class="ion-checkmark"></i>Daining room</li>
-              <li><i class="ion-checkmark"></i>Daining room</li>
-              <li><i class="ion-checkmark"></i>Bedroom</li>
-              <li><i class="ion-checkmark"></i>Bedroom</li>
-              <li><i class="ion-checkmark"></i>Bedroom</li>
-            </ul>
-          </div>
-        </div>
-        <!-- END -->
+    
 
         <!-- Floor Plan -->
         <div class="gl-page-contents-wrapper gl-floor-plan-wrapper appear fadeIn" data-wow-duration=".5s" data-wow-delay=".5s">
@@ -80,8 +56,11 @@
             <div class="panel-group" id="gl-floorplan" role="tablist" aria-multiselectable="true">
               <!-- FLoor plan item -->
                     <% @room.each do |room| %>
+                    <% @posts = Post.where(company_id: @company.id,room: room.id).all %>
+                      <% @posts.each do |post| %>
               <div class="panel panel-default gl-floorplan-item">
                 <!-- header -->
+
                 <div class="gl-floorplan-item-wrapper panel-heading" role="tab" id="gl-floorplan-<%= room.id %>">
                   <a role="button" data-toggle="collapse" data-parent="#gl-floorplan" href="#gl-floorplan-<%= room.id %>-Details" aria-expanded="true" aria-controls="gl-floorplan-<%= room.id %>-Details">
                     <h3><%= room.name %></h3>
@@ -91,12 +70,11 @@
                   </a>
                 </div>
                 <!-- END -->
-                       <% @posts = Post.where(company_id: @company.id,room: room.id).all %>
                    
 
                 <!-- Details -->
                 <div id="gl-floorplan-<%= room.id %>-Details" class="panel-collapse collapse gl-floorplan-details" role="tabpanel" aria-labelledby="gl-floorplanOne">
-                 <% @posts.each do |post| %>
+                
                   <div class="panel-body" style="border-top:solid #f2f2f2">
                   <div class="col-md-3" >
                   <h3><b><%= post.area %></b> m²</h3>
@@ -106,11 +84,12 @@
                     <img src="<%= post.image %>" alt="<%= post.image %>" class="gl-lazy" data-pagespeed-url-hash="3242599267" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
                   </div>
                   </div>
-                    <% end %>
                 </div>
-              
+                              
+
                 <!-- END -->
               </div>
+                  <% end %>
               <% end %>
               <!-- End -->
 
@@ -127,47 +106,9 @@
         </div>
         <!-- END -->
 
-        <!-- PROPERTY FEATURE -->
-        <div class="gl-page-contents-wrapper gl-location-map-wrapper appear fadeIn" data-wow-duration=".5s" data-wow-delay=".3s">
-          <h3 class="gl-content-title">Location Map</h3>
+      
 
-          <div class="gl-location-map">
-            <div id="gl-map-small"></div>
-          </div>
-        </div>
-        <!-- END -->
-
-        <!-- Agent Form -->
-        <div class="gl-page-contents-wrapper gl-agent-contact-wrapper appear fadeIn" data-wow-duration=".5s" data-wow-delay=".5s">
-          <div class="gl-agent-info-wrapper gl-same-height">
-            <div class="gl-agent-img-wrapper">
-              <img src="images/xagents-3.jpg.pagespeed.ic.21yCu8wZfT.jpg" alt="Agent" class="gl-lazy" data-pagespeed-url-hash="3454838305" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
-            </div>
-
-            <div class="gl-agent-infos">
-              <ul>
-                <li class="gl-agent-name">
-                  <h3><a href="agent_profile.html">Maria</a></h3>
-                  <p>Buying Agent</p>
-                </li>
-
-                <li><i class="ion-ios-telephone-outline"></i>082 856 310</li>
-                <li><i class="ion-ios-email-outline"></i>info@mail.com</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="gl-agent-contact-form gl-same-height">
-            <h3 class="gl-content-title">Contact Agent</h3>
-            <form action="#">
-              <input type="text" name="gl-agent-name" id="gl-agent-name" placeholder="Name">
-              <input type="email" name="gl-agent-email" id="gl-agent-email" placeholder="Email">
-              <textarea name="gl-agent-msg" id="gl-agent-msg" cols="30" rows="3" placeholder="Message"></textarea>
-              <button type="submit" class="gl-btn">Send</button>
-            </form>
-          </div>
-        </div>
-        <!-- END -->
+    
       </div>
       <!-- PAGE CONTENT DETAILS END -->
 
@@ -177,7 +118,7 @@
         <div class="gl-sidebar-widget gl-overview-widget">
           <div class="gl-overview-wrapper">
           <h3>  <%= @company.name %>  </h3>
-  <%= image_tag @company.logo %>
+  <img src="<%= @company.logo %>">
   <ul>
   <li><b>Tel.:</b><%= @company.phone %> </li>
   <li><b>Mertebe sayi: </b><%= @company.floor %> </li>
