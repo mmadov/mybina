@@ -72,8 +72,13 @@
 
 <span style="width: 118px;" dir="ltr" class="select2 select2-container select2-container--default">
 
-<span class="dropdown-wrapper" aria-hidden="true"></span></span></div>
+<span class="dropdown-wrapper" aria-hidden="true"></span></span>
+<%= button_to(companies_path,params[:search],
+  class: 'gl-icon-btn',style:'background: #ff5400') do %>
+ <i class="fa fa-search"></i> Axtar <% end %>
+</div>
 
+<!-- END -->
             
 
         <% end %>
