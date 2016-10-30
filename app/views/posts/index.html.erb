@@ -1,27 +1,99 @@
-<p id="notice"><%= notice %></p>
+<section class="gl-page-content-section">
+  <div class="container">
+    <div class="row">
+      <!-- PAGE CONTENT DETAILS -->
+      <div class="gl-page-content col-md-8 col-sm-8 col-xs-12">
+        <!-- SEARCH META -->
+       
+        <!-- SEARCH META END -->
 
-<h1>Posts</h1>
+        <!-- SEARCH RESULT -->
+        <div class="gl-search-result-wrapper">
+          <!-- FEATURED ITEMS -->
+   <% @posts.each do |home| %>
+          <div class="gl-featured-items gl-alt-search">
+            <div class="gl-feat-items-img-wrapper">
+              <picture>
+                
+  <%= image_tag home.image_url %>
+    
+  </picture>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+              <span class="gl-price-tag"><%= home.price %></span>
+            </div>
+ <% @company = Company.where(id: home.company_id).first %>
+            <div class="gl-feat-details-meta">
+              <div class="gl-feat-item-details">
+                <h3>
+<%= @company.name %>
+                </h3>
+                <div class="gl-item-location">
+                  <i class="ion-ios-location-outline"></i>
+                  <span><%= @company.adress %>
+</span>
+                </div>
+                <span class="gl-item-status-label gl-sold-label">Sold</span>
+              </div>
 
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.title %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+ 
+  <div class="gl-feat-item-metas"><ul class="gl-feature-info"><li>Otaq<span><%= home.room %></span></li><li>Sahe<span><%= home.area %>kv</span></li><li>Qiymet<span><%= home.price_room %> AZN</span></li></ul></div>
 
-<br>
+  </div>
+          </div>
+          <!-- END -->
+<% end %>
+          <!-- FEATURED ITEMS -->
+        
+      </div>
+      </div>
 
-<%= link_to 'New Post', new_post_path %>
+      <!-- PAGE CONTENT DETAILS END -->
+
+      <!-- SIDEBAR -->
+      <div class="gl-sidebar gl-page-sidebar col-md-4 col-sm-4 col-xs-12">
+        <!-- SIDEBAR WIDGET -->
+        <div class="gl-sidebar-widget gl-search-filter-widget">
+          <h3 class="gl-sidebar-title">Search Properties</h3>
+
+          <form action="#">
+            <div class="gl-filter-options gl-search-keyword">
+              <input name="gl-search-keyword" id="gl-search-keyword" placeholder="Keywords" type="text">
+            </div>
+
+            <div class="gl-filter-options gl-search-location">
+              <input name="gl-search-location" id="gl-search-location" placeholder="Location" autocomplete="off" type="text">
+            </div>
+
+            <div class="gl-range-wrapper gl-job-filter-options">
+              <span class="gl-filter-inp-title">Price Range</span>
+
+              <span class="gl-range-value">$500 - $7000</span>
+              <div class="gl-range-slider">
+                <span class="irs js-irs-0"><span class="irs"><span class="irs-line" tabindex="-1"><span class="irs-line-left"></span><span class="irs-line-mid"></span><span class="irs-line-right"></span></span><span class="irs-min" style="display: none;">0</span><span class="irs-max" style="display: none;">1</span><span class="irs-from" style="display: none; left: 0%;">0</span><span class="irs-to" style="display: none; left: 0%;">0</span><span class="irs-single" style="display: none; left: 0%;">0</span></span><span class="irs-grid"></span><span class="irs-bar" style="left: 7.23768%; width: 61.4265%;"></span><span class="irs-shadow shadow-from" style="display: none;"></span><span class="irs-shadow shadow-to" style="display: none;"></span><span class="irs-slider from" style="left: 4.25261%;"></span><span class="irs-slider to type_last" style="left: 65.6791%;"></span></span><input id="gl-search-range" name="gl-search-range" class="irs-hidden-input" readonly="" type="text">
+              </div>
+            </div>
+
+            <div class="gl-search-category gl-filter-options">
+              <select class="gl--search-category-selection select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+                <option>&nbsp;</option>
+                <option value="fulltime">Fulltime</option>
+                <option value="parttime">Part Time</option>
+                <option value="remote">Remote</option>
+              </select><span class="select2 select2-container select2-container--default" dir="ltr" style="width: 108px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-xem0-container"><span class="select2-selection__rendered" id="select2-xem0-container"><span class="select2-selection__placeholder">Category</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+            </div>
+
+            <div class="gl-filter-options">
+              <input name="gl-bath" id="gl-bath" placeholder="Bed" type="text">
+            </div>
+
+            <div class="gl-filter-options">
+              <input name="gl-bed" id="gl-bed" placeholder="Bath" type="text">
+            </div>
+          </form>
+        </div>
+        <!-- END -->
+      </div>
+      <!-- SIDEBAR END -->
+    </div>
+  </div>
+</section>
