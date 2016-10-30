@@ -57,7 +57,8 @@
               <!-- FLoor plan item -->
                     <% @room.each do |room| %>
                     <% @posts = Post.where(company_id: @company.id,room: room.id).all %>
-                      <% @posts.each do |post| %>
+                      <% @posts.empty? %>
+
               <div class="panel panel-default gl-floorplan-item">
                 <!-- header -->
 
@@ -71,10 +72,10 @@
                 </div>
                 <!-- END -->
                    
-
                 <!-- Details -->
                 <div id="gl-floorplan-<%= room.id %>-Details" class="panel-collapse collapse gl-floorplan-details" role="tabpanel" aria-labelledby="gl-floorplanOne">
-                
+                                      <% @posts.each do |post| %>
+
                   <div class="panel-body" style="border-top:solid #f2f2f2">
                   <div class="col-md-3" >
                   <h3><b><%= post.area %></b> m²</h3>
@@ -84,13 +85,14 @@
                     <img src="<%= post.image %>" alt="<%= post.image %>" class="gl-lazy" data-pagespeed-url-hash="3242599267" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
                   </div>
                   </div>
+                  <% end %>
                 </div>
                               
 
                 <!-- END -->
               </div>
+          
                   <% end %>
-              <% end %>
               <!-- End -->
 
               <!-- FLoor plan item -->

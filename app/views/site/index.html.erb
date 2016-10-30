@@ -46,7 +46,9 @@
 	
 <% @homes = Post.where(company_id: company.id).all %>
 	 <% @homes.each do |home| %>
-	<div class="gl-feat-item-metas"><ul class="gl-feature-info"><li>Otaq<span><%= home.room_name %></span></li><li>Sahe<span><%= home.area %>kv</span></li><li>Qiymet<span><%= home.price_room %> AZN</span></li></ul></div>
+	 <% @room = Room.where(id: home.room).first %>
+
+	<div class="gl-feat-item-metas"><ul class="gl-feature-info"><li>Otaq<span><%= @room.name %></span></li><li>Sahe<span><%= home.area %>kv</span></li><li>Qiymet<span><%= home.price_room %> AZN</span></li></ul></div>
 
 <% end %>
 	</div><!-- END --><!-- FEATURED ITEMS -->
