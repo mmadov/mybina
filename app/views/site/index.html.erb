@@ -1,6 +1,18 @@
-<section class="gl-hero-img-wrapper" style="padding:150px 0;"><div class="container"><div class="row"><div class="container"><div class="row"><div class="gl-elements-content-wrapper"><div style="display: none;" id="typed-strings"><h2 id="gl-slogan" class="gl-hero-text-heading">Find the <span class="gl-color-text">best</span> job for you</h2><p>Find the <span class="gl-color-text">best</span> job for you</p></div><h2 id="gl-slogan" class="gl-hero-text-heading">Find the <span class="gl-color-text">best</span> job for you</h2><span class="typed-cursor">|</span><p class="gl-hero-text-paragraph">Glimpse theme is providing you the best directory services from <span class="gl-color-text">+150</span> leading companies</p><!-- DIRECTORY FORM -->
-<div class="gl-directory-searchbar gl-bz-directory-searchbar">
-<%= form_tag(companies_path, method: "get", id: "gl-bz-directory-form") do  %>
+<section class="gl-hero-img-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="gl-elements-content-wrapper">
+        <div id="typed-strings" style="display: none;">
+            <p>Let’s <span class="gl-color-text">go</span> anywhere</p>
+            <p>Best <span class="gl-color-text">directory</span> themes ever</p>
+            <p>Find The <span class="gl-color-text">Best Places</span> In Your City</p>
+        </div>
+        <h2 id="gl-slogan" class="gl-hero-text-heading">Fin</h2><span class="typed-cursor">|</span>
+        <p class="gl-hero-text-paragraph">Glimpse theme is providing you the best directory services from good leading companies</p>
+
+        <!-- DIRECTORY FORM -->
+        <div class="gl-directory-searchbar gl-bz-directory-searchbar">
+        <%= form_tag(companies_path, method: "get", id: "gl-bz-directory-form") do  %>
 <fieldset>
 
     <%= text_field_tag :name,params[:name], placeholder: "Sirketin adi" %>
@@ -17,11 +29,20 @@
 <span class="dropdown-wrapper" aria-hidden="true"></span></span></div>
 
 </fieldset>
-<%= button_to(companies_path,params[:search],
-  class: 'gl-icon-btn',style:'background: #ff5400') do %>
- <i class="fa fa-search"></i> Search <% end %>
-</div><!-- END --></div></div></div></section>
+	<%= link_to 'Axtar', companies_path, class: "gl-icon-btn" ,style:"color:#fff;padding:22px" %>
+
+</div><!-- END -->
 <% end %>
+    
+        <!-- END -->
+
+        <div class="gl-scroll-down-wrapper">
+          <a href="#gl-next-section" class="gl-scroll-down"><i class="ion-chevron-down"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 
 
@@ -61,9 +82,36 @@
 
 	<section class="gl-custom-prop-section" style="background-image:url('http://res.cloudinary.com/hjwvs4sfi/image/upload/v1477858011/iat428x91r5jset0uj0v.jpg')"><div class="container"><div class="row"><div class="gl-custom-prop-features"><h3>Azfar residence</h3><p><i class="ion-ios-location-outline"></i> Bakı şəhəri, Ağ Şəhər, Mərkəzi Bulvar küç.</p><ul><li>Mertebe<span>6</span></li><li>Blok<span>5</span></li><li>Qiymet<span>1600 azn</span></li><li></li><li class="gl-feat-prop-price"></li></ul><a href="#" class="gl-btn">Etrafli</a></div></div></div></section>
 
-	<section class="gl-recent-listing-section gl-section-wrapper"><div class="container"><div class="row"><!-- SECTION HEADINGS --><div class="gl-section-headings"><h1>Recent Listings</h1><p>Checkout and enjoy the biggest unlimited possiblities</p></div><!-- END --><!-- WRAPPER --><div class="gl-recent-listing-wrapper"><!-- FEATURED ITEMS --><div class="gl-featured-items col-md-3 col-sm-6 col-xs-12"><div class="gl-feat-items-img-wrapper"><picture><source media="(min-width: 768px)" srcset="http://sites.redqteam.com/glimpse/real-estate/images/real-estate-img-2-lg.jpg"><img alt="Category Image" srcset="http://sites.redqteam.com/glimpse/real-estate/images/real-estate-img-2.jpg"></picture><a href="http://sites.redqteam.com/glimpse/real-estate/images/real-estate-img-2.jpg" class="gl-lightbox-img gl-overlay"></a> <span class="gl-price-tag">$3,000</span></div><div class="gl-feat-item-details"><span class="gl-item-status-label gl-sold-label">Sold</span><h3><a href="list_details.html">Lake Cafe</a></h3><div class="gl-item-location"><i class="ion-ios-location-outline"></i> <span>Road 3, West Portland, USA</span></div></div></div><!-- END --><!-- FEATURED ITEMS --><div class="gl-featured-items col-md-3 col-sm-6 col-xs-12"><div class="gl-feat-items-img-wrapper"><picture><source media="(min-width: 768px)" srcset="http://sites.redqteam.com/glimpse/real-estate/images/real-estate-img-3-lg.jpg"><img alt="Category Image" srcset="http://sites.redqteam.com/glimpse/real-estate/images/real-estate-img-3.jpg"></picture><a href="http://sites.redqteam.com/glimpse/real-estate/images/real-estate-img-3.jpg" class="gl-lightbox-img gl-overlay"></a> <span class="gl-price-tag">$300</span></div><div class="gl-feat-item-details"><span class="gl-item-status-label gl-sale-label">Sale</span><h3><a href="list_details.html">Moon Castle</a></h3><div class="gl-item-location"><i class="ion-ios-location-outline"></i> <span>Road 3, West Portland, USA</span></div></div></div><!-- END --><!-- FEATURED ITEMS --><div class="gl-featured-items col-md-3 col-sm-6 col-xs-12"><div class="gl-feat-items-img-wrapper"><picture><source media="(min-width: 768px)" srcset="http://sites.redqteam.com/glimpse/real-estate/images/real-estate-img-4-lg.jpg"><img alt="Category Image" srcset="http://sites.redqteam.com/glimpse/real-estate/images/real-estate-img-4.jpg"></picture><a href="http://sites.redqteam.com/glimpse/real-estate/images/real-estate-img-4.jpg" class="gl-lightbox-img gl-overlay"></a> <span class="gl-price-tag">$600</span></div><div class="gl-feat-item-details"><span class="gl-item-status-label gl-rent-label">Rent</span><h3><a href="list_details.html">Green Cafe</a></h3><div class="gl-item-location"><i class="ion-ios-location-outline"></i> <span>Road 3, West Portland, USA</span></div></div></div><!-- END --><!-- FEATURED ITEMS --><div class="gl-featured-items col-md-3 col-sm-6 col-xs-12"><div class="gl-feat-items-img-wrapper"><picture><source media="(min-width: 768px)" srcset="http://sites.redqteam.com/glimpse/real-estate/images/real-estate-img-5-lg.jpg"><img alt="Category Image" srcset="http://sites.redqteam.com/glimpse/real-estate/images/real-estate-img-5.jpg"></picture><a href="http://sites.redqteam.com/glimpse/real-estate/images/real-estate-img-5.jpg" class="gl-lightbox-img gl-overlay"></a> <span class="gl-price-tag">$600</span></div><div class="gl-feat-item-details"><span class="gl-item-status-label gl-sold-label">Sold</span><h3><a href="list_details.html">Fort House</a></h3><div class="gl-item-location"><i class="ion-ios-location-outline"></i> <span>Road 3, West Portland, USA</span></div></div></div><!-- END --><!-- FEATURED ITEMS --><div class="gl-featured-items col-md-3 col-sm-6 col-xs-12"><div class="gl-feat-items-img-wrapper"><picture><source media="(min-width: 768px)" srcset="http://sites.redqteam.com/glimpse/real-estate/images/real-estate-img-8-lg.jpg"><img alt="Category Image" srcset="http://sites.redqteam.com/glimpse/real-estate/images/real-estate-img-8.jpg"></picture><a href="http://sites.redqteam.com/glimpse/real-estate/images/real-estate-img-8.jpg" class="gl-lightbox-img gl-overlay"></a> <span class="gl-price-tag">$600</span></div><div class="gl-feat-item-details"><span class="gl-item-status-label gl-rent-label">Rent</span><h3><a href="list_details.html">Sea Palace</a></h3><div class="gl-item-location"><i class="ion-ios-location-outline"></i> <span>Road 3, West Portland, USA</span></div></div></div><!-- END --><!-- FEATURED ITEMS --><div class="gl-featured-items col-md-3 col-sm-6 col-xs-12"><div class="gl-feat-items-img-wrapper"><picture><source media="(min-width: 768px)" srcset="http://sites.redqteam.com/glimpse/real-estate/images/recent-img-1-lg.jpg"><img alt="Category Image" srcset="http://sites.redqteam.com/glimpse/real-estate/images/recent-img-1.jpg"></picture><a href="http://sites.redqteam.com/glimpse/real-estate/images/recent-img-1.jpg" class="gl-lightbox-img gl-overlay"></a> <span class="gl-price-tag">$600</span></div><div class="gl-feat-item-details"><span class="gl-item-status-label gl-sale-label">Sale</span><h3><a href="list_details.html">Sun Resort</a></h3><div class="gl-item-location"><i class="ion-ios-location-outline"></i> <span>Road 3, West Portland, USA</span></div></div></div><!-- END --><!-- FEATURED ITEMS --><div class="gl-featured-items col-md-3 col-sm-6 col-xs-12"><div class="gl-feat-items-img-wrapper"><picture><source media="(min-width: 768px)" srcset="http://sites.redqteam.com/glimpse/real-estate/images/recent-img-2-lg.jpg"><img alt="Category Image" srcset="http://sites.redqteam.com/glimpse/real-estate/images/recent-img-2.jpg"></picture><a href="http://sites.redqteam.com/glimpse/real-estate/images/recent-img-2.jpg" class="gl-lightbox-img gl-overlay"></a> <span class="gl-price-tag">$600</span></div><div class="gl-feat-item-details"><span class="gl-item-status-label gl-sold-label">Sold</span><h3><a href="list_details.html">Green Home</a></h3><div class="gl-item-location"><i class="ion-ios-location-outline"></i> <span>Road 3, West Portland, USA</span></div></div></div><!-- END --><!-- FEATURED ITEMS --><div class="gl-featured-items col-md-3 col-sm-6 col-xs-12"><div class="gl-feat-items-img-wrapper"><picture><source media="(min-width: 768px)" srcset="http://sites.redqteam.com/glimpse/real-estate/images/recent-img-3-lg.jpg"><img alt="Category Image" srcset="http://sites.redqteam.com/glimpse/real-estate/images/recent-img-3.jpg"></picture><a href="http://sites.redqteam.com/glimpse/real-estate/images/recent-img-3.jpg" class="gl-lightbox-img gl-overlay"></a> <span class="gl-price-tag">$600</span></div><div class="gl-feat-item-details"><span class="gl-item-status-label gl-rent-label">Rent</span><h3><a href="list_details.html">Moon Resort</a></h3><div class="gl-item-location"><i class="ion-ios-location-outline"></i> <span>Road 3, West Portland, USA</span></div></div>
+<section class="gl-feat-properties-section gl-section-wrapper" id="gl-next-section"><div class="container"><div class="row"><!-- SECTION HEADINGS --><div class="gl-section-headings"><h1>Featured Property</h1><p>Checkout and enjoy the biggest unlimited possiblities</p></div><!-- END --><!-- WRAPPER --><div class="gl-featured-listing-wrapper"><!-- FEATURED ITEMS -->
+	 <% @companiess.each do |company| %>
+	<div class="gl-featured-items col-md-4 col-sm-4 col-xs-12">
+	   
 
-	</div><!-- END -->
+	<div class="gl-feat-items-img-wrapper">
+	<picture>
+	
+	<%= image_tag company.image_url %>
+	</picture>
+	<span class="gl-price-tag"><h3>1kv</h3>
+	<p><%= company.price %> AZN</p></span>
+	</div>
+	<div class="gl-feat-item-details">
+	<span class="gl-item-status-label gl-sold-label">Sold</span>
+	<h3> <%= link_to company.name, company %> </a></h3>
+	<div class="gl-item-location"><i class="ion-ios-location-outline"></i> 
+	<span><%= company.adress %> </span></div></div>
+	
+<% @homes = Post.where(company_id: company.id).limit(4) %>
+	 <% @homes.each do |home| %>
+	 <% @room = Room.where(id: home.room).first %>
 
+	<div class="gl-feat-item-metas"><ul class="gl-feature-info"><li>Otaq<span><%= @room.name %></span></li><li>Sahe<span><%= home.area %>kv</span></li><li>Qiymet<span><%= home.price_room %> AZN</span></li></ul></div>
 
-	</div><!-- END --><!-- MORE BTN --><div class="gl-more-btn-wrapper"><a href="#" class="gl-more-btn gl-btn">More</a></div><!-- END --></div></div></section>
+<% end %>
+	</div><!-- END --><!-- FEATURED ITEMS -->
+
+<% end %>
+	
+	<!-- END -->
+	</div><!-- END --><!-- MORE BTN -->
+	<div class="gl-more-btn-wrapper"><a href="#" class="gl-more-btn gl-btn">More</a></div><!-- END --></div></div></section>

@@ -85,35 +85,133 @@ text-align: center;
 text-transform: uppercase;
 }
 </style>
-<header >
-<header class="gl-header"><!-- TOPBAR --><div class="gl-header-topbar"><div class="container"><div class="row"><div class="gl-header-contact-info"><ul><li><i class="ion-ios-telephone-outline"></i>082 856 310</li><li><i class="ion-ios-email-outline"></i>info@mail.com</li></ul></div><div class="gl-social-icon-list"><ul><li><a href="#" class="gl-fb"><i class="fa fa-facebook"></i></a></li><li><a href="#" class="gl-twitter"><i class="fa fa-twitter"></i></a></li><li><a href="#" class="gl-behance"><i class="fa fa-behance"></i></a></li><li><a href="#" class="gl-dribbble"><i class="fa fa-dribbble"></i></a></li><li><a href="#" class="gl-vimeo"><i class="fa fa-vimeo"></i></a></li></ul></div></div></div></div><!-- END --><!-- BOTTOM BAR/NAVIGATION --><div class="gl-header-bottombar"><!-- Navigation Menu start--><nav class="navbar gl-header-main-menu" role="navigation"><div class="container"><!-- Navbar Toggle --><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button><!-- Logo --> <a class="navbar-brand" href="/"><img class="logo" src="images/logo-header.png" alt="GLIMPSE"></a></div><!-- Navbar Toggle End --><!-- navbar-collapse start--><div style="max-height: 623px;" id="nav-menu" class="navbar-collapse gl-menu-wrapper collapse" role="navigation">
-<ul class="nav navbar-nav gl-menus"><li class="active"><a href="/">Ana Sehife</a></li>
-	<li><a href="listing-style-1.html">Binalar</a></li>
-	<li><a href="property-details.html">Sirketler</a></li>
-	<li><a href="agent-profile.html">Kampaniyalar</a></li>
-	<li><a href="about-us.html">Elaqe</a></li>
+<!-- PAGE OVERLAY WHEN MENU ACTIVE -->
+<div class="gl-side-menu-overlay"></div>
+<!-- PAGE OVERLAY WHEN MENU ACTIVE END -->
 
-	
-	
-	</ul></div><!-- navbar-collapse end--><!-- OTHER BTNS -->
-	<div class="gl-extra-btns-wrapper"><!-- COMPARE BTN -->
-	<div class="gl-compare-icon"><div class="gl-compare-btn-wrapper"><span class="icon-bar"></span> <span class="icon-bar"></span></div>
-	</div><!-- END --><!-- PROFILE BTN --> 
+<div class="gl-side-menu-wrap">
+    <div class="gl-side-menu">
+        <div class="gl-side-menu-widget-wrap">
+            <div class="gl-login-form-wrapper">
+                <h3>User Login</h3>
+                <p>Login to add new listing </p>
 
-	<% if user_signed_in? %>
-	<% @postss = Company.where(:user_id => current_user.id ) 
-	if @postss.empty? %>
-	<%= link_to 'Sirket ac', new_company_path, class: "gl-btn",style:"color:#fff" %>
-	<% else %>
-	<%= link_to 'Bina ac', new_home_path, class: "gl-btn" ,style:"color:#fff" %>
-<% end %>
+                <div class="gl-login-form">
+                    <form action="#">
+                        <input type="text" name="gl-user-name" id="gl-user-input" placeholder="User Name">
+                        <input type="password" name="gl-user-password" id="gl-user-password" placeholder="Password">
+                        <button type="submit">Login</button>
+                    </form>
+                </div>
 
-     <%= link_to " exit", destroy_user_session_path, method: :delete, class: "gl-btn" ,style:"color:#fff"%>
-<% else %>  <%= link_to 'Daxil ol', new_user_session_path, class: "gl-btn" ,style:"color:#fff"%>  <%= link_to 'Qeydiyyat', new_user_registration_path, class: "gl-btn",style:"color:#fff" %></div>
-<% end %>
-	<!-- PROFILE BTN END --></div><!-- END --></div></nav><!-- Navigation Menu end--></div><!-- END --></header>
+                <div class="gl-social-login-opt">
+                    <a href="#" class="gl-social-login-btn gl-facebook-login">Login with Facebook</a>
+                    <a href="#" class="gl-social-login-btn gl-twitter-login">Login with Twitter</a>
+                </div>
 
+                <div class="gl-other-options">
+                    <a href="#" class="gl-forgot-pass">Forget Password ?</a>
+                    <a href="#" class="gl-signup">Sign up</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button class="gl-side-menu-close-button" id="gl-side-menu-close-button">Close Menu</button>
+</div>
+<!-- SIDE MENU END -->
+
+
+<!-- HEADER -->
+<header class="gl-header">
+  <!-- BOTTOM BAR/NAVIGATION -->
+  <div class="gl-header-bottombar">
+    <!-- Navigation Menu start-->
+    <nav class="navbar gl-header-main-menu" role="navigation">
+      <div class="container-fluid">
+
+        <!-- Navbar Toggle -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Logo -->
+            <a class="navbar-brand" href="index.html"><img class="logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAdCAMAAAD8QJ61AAAAPFBMVEVMaXFFRUVFRUX8SlJFRUVFRUX8SlJFRUVFRUX8SlJFRUVFRUX8SlJFRUVFRUVFRUX8SlJFRUVFRUX8SlJ041DcAAAAEnRSTlMAESIqM0xiZnd3iJ2qu8zd5u5RA0tvAAAA0UlEQVR42oWR4RKEIAiElSzJTkp9/3e9gZw6pOm+X4y7KixOiKn+sLuBsFfFPupatobMhxmc204Zw9MDnkviCtxAlAekRC7TP8M2GmY+pRcDVAauHnDQe/MEvSjeGEDlNDuL3+6MWDcAdTlF96iXWouJZzlaO9ZruDzqaxM+XCeZHpl7DUc7mXpSN1nanFpnOYNQRGNAUobi9RdzqQOomgTWqeczZ2lYjbmp/IPdJ0kKL4ZdvZDtwuWIolzH8rDwWO0QGnrVTZA5OAtg7pcRjPgFcV0cINvChkYAAAAASUVORK5CYII=" alt="GLIMPSE" data-pagespeed-url-hash="2342147589" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></a>
+        </div>
+        <!-- Navbar Toggle End -->
+
+        <!-- navbar-collapse start-->
+        <div id="nav-menu" class="navbar-collapse gl-menu-wrapper collapse" role="navigation">
+          <ul class="nav navbar-nav gl-menus">
+              <li class="active">
+                <a href="index.html">Home</a>
+                <ul class="gl-sub-menu">
+                    <li>
+                        <a href="../jobs/index.html">Home - Job</a>
+                    </li>
+                    <li>
+                        <a href="../real-estate/index.html">Home - Real Estate</a>
+                    </li>
+                    <li>
+                        <a href="../restaurant/index.html">Home - Restaurant</a>
+                    </li>
+                </ul>
+              </li>
+              <li>
+                <a href="listing-style-1.html">Listing</a>
+                <ul class="gl-sub-menu">
+                    <li>
+                        <a href="listing-style-2.html">Listing Style - Map Right</a>
+                    </li>
+                    <li>
+                        <a href="listing-style-3.html">Listing Style - Map Top</a>
+                    </li>
+                </ul>
+              </li>
+              <li>
+                <a href="company.html">company</a>
+              </li>
+              <li>
+                <a href="about-us.html">About</a>
+              </li>
+              <li>
+                <a href="../elements/elements.html">Elements</a>
+              </li>
+              <li>
+                <a href="blog-grid.html">Blog</a>
+                <ul class="gl-sub-menu">
+                    <li>
+                        <a href="blog-default.html">Blog Default</a>
+                    </li>
+                    <li>
+                        <a href="blog-details.html">Blog Details</a>
+                    </li>
+                </ul>
+              </li>
+              <li>
+                <a href="contact-us.html">Contact</a>
+              </li>
+          </ul>
+        </div>
+        <!-- navbar-collapse end-->
+
+        <div class="gl-extra-btns-wrapper">
+          <button class="gl-login-btn" id="gl-side-menu-btn">Login</button>
+          <button class="gl-add-post-btn">+ Post Add</button>
+        </div>
+
+      </div>
+    </nav>
+    <!-- Navigation Menu end-->
+  </div>
+  <!-- END -->
 </header>
+<!-- HEADER END -->
+
+
 
   <body>
       <%= yield %>
