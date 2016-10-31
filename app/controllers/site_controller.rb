@@ -1,6 +1,6 @@
 class SiteController < ApplicationController
 	def index 
-		@companies = Company.all
+		@companies = Company.first(3)
 		
 	end
 end
