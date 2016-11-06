@@ -7,7 +7,6 @@ gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
@@ -15,12 +14,13 @@ gem 'coffee-rails', '~> 4.2'
 gem 'nested_scaffold'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-gem 'bootstrap', '~> 4.0.0.alpha4'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 gem 'carrierwave'
 gem 'owlcarousel-rails'
-gem 'bootstrap-sass' 
+gem 'bootstrap-sass', :git => 'https://github.com/twbs/bootstrap-sass.git', :branch => 'next'
+# Use SCSS for stylesheets 
+gem 'sass-rails', '~> 5.0' 
 gem 'mini_magick'
 gem 'cloudinary'
 gem 'remotipart', '~> 1.2'
