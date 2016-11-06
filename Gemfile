@@ -18,10 +18,10 @@ gem 'nested_scaffold'
 gem 'jquery-rails'
 gem 'carrierwave'
 gem 'owlcarousel-rails'
-gem 'bootstrap-sass', :git => 'https://github.com/twbs/bootstrap-sass.git', :branch => 'next'
 # Use SCSS for stylesheets 
 gem 'sass-rails', '~> 5.0'
-gem 'bootstrap', '~> 4.0.0.alpha5' 
+gem 'bootstrap-sass'
+
 gem 'mini_magick'
 gem 'cloudinary'
 gem 'remotipart', '~> 1.2'
