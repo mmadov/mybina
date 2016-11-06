@@ -22,11 +22,8 @@ development:
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
-   adapter: mysql2
-  database: heroku_e2ba01c3e929ad8
-  username: b5b8fff721f5d8
-  password: 5f16de12
-  host: us-cdbr-iron-east-04.cleardb.net
+  <<: *default
+  database: db/test.sqlite3
 
 production:
   adapter: mysql2
