@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @akciya.title %>
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @akciya.text %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @akciya.image %>
+</p>
+
+<p>
+  <strong>Company:</strong>
+  <%= @akciya.company_id %>
+</p>
+
+<p>
+  <strong>Desc:</strong>
+  <%= @akciya.desc %>
+</p>
+
+<%= link_to 'Edit', edit_akciya_path(@akciya) %> |
+<%= link_to 'Back', akciyas_path %>

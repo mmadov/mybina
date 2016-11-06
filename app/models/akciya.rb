@@ -1,0 +1,2 @@
+class Akciya < ApplicationRecord
+end

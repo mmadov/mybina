@@ -6,7 +6,7 @@ class CompaniesController < ApplicationController
 def index
   @companies = Company.all
   if params[:name]
-    @companies = Company.search(params[:name],params[:price],params[:region_id]).order("created_at DESC")
+    @companies = Company.search(params[:name],params[:price],params[:region]).order("created_at DESC")
   
   else
     @companies = Company.all.order("created_at DESC")

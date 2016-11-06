@@ -6,11 +6,11 @@ class Company < ApplicationRecord
 		   mount_uploader :image, AvatarUploader
 		   mount_uploader :logo, AvatarUploader
 		   
-def self.search(name,price,region_id)
-	if region_id == ""
-  where("name LIKE ? AND price LIKE? AND region_id LIKE?", "%#{name}%","%#{price}%","%#{region_id}%")
+def self.search(name,price,region)
+	if region == ""
+  where("name LIKE? AND price LIKE? AND region LIKE?", "%#{name}%","%#{price}%","%#{region}%")
 else 
-	where("name LIKE ? AND price LIKE? AND region_id LIKE?", "%#{name}%","%#{price}%","#{region_id}")
+	where("name LIKE? AND price LIKE? AND region LIKE?", "%#{name}%","%#{price}%","#{region}")
 end
 end
 end

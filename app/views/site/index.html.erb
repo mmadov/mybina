@@ -22,16 +22,14 @@
 <div class="gl-jobs-category gl-category-dropdown">
 
     <% cities_array = Region.all.map { |city| [city.name, city.id] } %>
-    <%= select_tag(:region_id,options_for_select(cities_array),{include_blank: "Select something",class:"gl-category-dropdown-selection select2-hidden-accessible"}) %>
+    <%= select_tag(:region,options_for_select(cities_array),{include_blank: "Select something",class:"gl-category-dropdown-selection select2-hidden-accessible"}) %>
 
 <span style="width: 118px;" dir="ltr" class="select2 select2-container select2-container--default">
 
 <span class="dropdown-wrapper" aria-hidden="true"></span></span></div>
 
 </fieldset>
-	<%= link_to 'Axtar', companies_path, class: "gl-icon-btn" ,style:"color:#fff;padding:22px" %>
-
-</div><!-- END -->
+<button type="submit" class="gl-icon-btn"><i class="fa fa-search"></i> Search</button>	</div><!-- END -->
 <% end %>
     
         <!-- END -->
