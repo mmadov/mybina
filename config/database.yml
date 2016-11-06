@@ -5,9 +5,11 @@
 #   gem 'sqlite3'
 #
 default: &default
-  adapter: sqlite3
-  pool: 5
-  timeout: 5000
+  adapter: mysql2
+  database: heroku_e2ba01c3e929ad8
+  username: b5b8fff721f5d8
+  password: 5f16de12
+  host: us-cdbr-iron-east-04.cleardb.net
 
 development:
   adapter: mysql2
@@ -20,9 +22,15 @@ development:
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
-  <<: *default
-  database: db/test.sqlite3
+   adapter: mysql2
+  database: heroku_e2ba01c3e929ad8
+  username: b5b8fff721f5d8
+  password: 5f16de12
+  host: us-cdbr-iron-east-04.cleardb.net
 
 production:
-  <<: *default
-  database: db/production.sqlite3
+  adapter: mysql2
+  database: mmadov_mybina44
+  username: mmadov_mybina44
+  password: JCyFxdHfQZ
+  host: mysql7.locum.ru
