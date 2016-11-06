@@ -4,6 +4,7 @@ lock '3.6.1'
 
 # Project configuration options
 # ------------------------------
+forwarded_agent = true
 
 set :application,    'mybina'
 set :login,          'mmadov'
@@ -17,7 +18,6 @@ set :bundle_without, %w{development test}.join(' ')             # this is defaul
 set :use_sudo,       false
 
 set :repo_url,       "git@github.com:mmadov/mybina.git"
-forwarded_agent = true
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
 
@@ -38,7 +38,7 @@ set :linked_dirs, %w(log tmp/cache tmp/pids vendor/bundle public/system)
 # set :keep_releases, 5
 
 # Configure RVM
-set :rvm_ruby_version, '2.2'
+set :rvm_ruby_version, '2.2.2'
 
 # You unlikely have to change below this line
 # -----------------------------------------------------------------------------
