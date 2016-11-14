@@ -36,7 +36,7 @@ end
   def create
     @company = Company.new(company_params)
    @company.user_id = current_user.id
-   @company.region_id = params[:region_id]
+   @company.region = params[:region]
     respond_to do |format|
       if @company.save
        params[:company_attachments]['image'].each do |a|
