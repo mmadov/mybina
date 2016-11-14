@@ -81,6 +81,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def company_params
-      params.require(:company).permit(:name, :about, :slide, :logo, :image, :adress, :user_id,:price, :phone, :facebook, :youtube, :web_site, :floor, :region_id, :part,company_attachments_attributes:[:image,:_destroy,:id])
+      params.require(:company).permit(:name, :about, :slide, :logo, :image, :adress, :user_id,:price, :phone, :facebook, :youtube, :web_site, :floor, :region, :part,company_attachments_attributes:[:image,:_destroy,:id])
     end
 end
